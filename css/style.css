@@ -11,11 +11,10 @@ body {
   body {
     background-size: 150%;
   }
+
   /* 태블릿 터치 스크린 */
-  @media (hover:none){
-    
-  }
-  
+  @media (hover:none) {}
+
   /* 스마트폰 ********************************* */
   @media (max-width:767px) {
     body {
@@ -46,6 +45,7 @@ body {
   top: 0;
   z-index: 20;
 }
+
 .header.scroll {
   background-color: #ffffffef;
 }
@@ -78,10 +78,12 @@ body {
   position: relative;
 
 }
+
 .nav__btn.on {
   color: var(--color1);
   font-weight: bold;
 }
+
 .nav__btn:not(.header__blog, .header__github)::after {
   content: '';
   display: block;
@@ -93,10 +95,12 @@ body {
   left: 50%;
   bottom: 2px;
 }
+
 @media(hover:hover) and (any-pointer:fine) and (min-width:768px) {
   .nav__btn:hover {
     color: var(--color1);
   }
+
   .nav__btn:not(.header__blog, .header__github):hover::after {
     width: 64%;
     left: 18%;
@@ -110,6 +114,7 @@ body {
   color: var(--color1);
 
 }
+
 @media (any-hover:hover) and (any-pointer:fine) and (min-width:768px) {
   .header__blog:hover {
     color: var(--color-w);
@@ -120,6 +125,7 @@ body {
   margin-left: 2%;
 
 }
+
 @media (any-hover:hover) and (any-pointer:fine) and (min-width:768px) {
   .header__github:hover {
     color: var(--color-w);
@@ -151,32 +157,33 @@ body {
   .nav__btn {
     margin-left: 0;
   }
-  
+
   .s-btn1 {
     padding: 0.5em 0.8em;
   }
-  
+
   .header__blank::after {
     top: -19rem;
   }
-  
+
   /* 스마트폰 사이즈 이하********** */
   @media (max-width:767px) {
+
     html.on,
     body.on {
       /*js*/
       overflow-y: hidden;
     }
-    
+
     .header {
       box-shadow: 0 6px 6px #0000001A;
     }
-    
+
     .header__logo-img {
       width: 60px;
       object-fit: scale-down;
     }
-    
+
     .header__center {
       position: absolute;
       width: 100%;
@@ -186,19 +193,20 @@ body {
       height: 0;
       overflow: hidden;
     }
+
     .header__center.on {
       /*js*/
       background-color: #00000033;
       height: 100vh;
     }
-    
+
     .nav {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       box-shadow: 0 6px 6px #0000001A;
     }
-    
+
     .nav__btn {
       --event-color: hsl(218, 33%, 90%);
       width: 100%;
@@ -209,19 +217,22 @@ body {
       text-align: center;
       background-color: var(--color3);
     }
-    @media (any-hover:hover) and (any-pointer:fine){
+
+    @media (any-hover:hover) and (any-pointer:fine) {
       .nav__btn:hover {
         background-color: var(--event-color);
         color: var(--color2);
       }
     }
-    
+
     .header__blog,
     .header__github {
       background-color: var(--event-color);
       color: var(--color1);
     }
+
     @media (any-hover:hover) and (any-pointer:fine) {
+
       .header__blog:hover,
       .header__github:hover {
         background-color: hsl(218, 33%, 80%);
@@ -229,37 +240,39 @@ body {
         box-shadow: none;
       }
     }
-    
+
     .header__right {
       display: block;
     }
-    
+
     .header__right-btn {
       text-align: center;
       height: 100%;
       font-size: 50px;
       color: var(--color-b);
     }
-    @media (any-hover:hover) and (any-pointer:fine){
+
+    @media (any-hover:hover) and (any-pointer:fine) {
       .header__right-btn:hover {
         color: var(--color2);
       }
     }
+
     .header__right-btn.on {
-      /*js*/  
+      /*js*/
       color: var(--color2);
     }
-    
+
     .header__blank::after {
       display: none;
     }
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
   }
 }
 
@@ -273,7 +286,7 @@ body {
 
 /* footer ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* 공통 pc기본 ********************************* */
-.footer{
+.footer {
   padding: 0 0 50px;
   background-color: var(--rgba-color4);
   color: var(--color-w);
@@ -284,7 +297,8 @@ body {
   flex-wrap: wrap;
 }
 
-.footer__copy, .footer__sns {
+.footer__copy,
+.footer__sns {
   padding-top: 30px;
   line-height: 1.4;
 }
@@ -296,6 +310,7 @@ body {
   margin-left: 16px;
   box-shadow: none;
 }
+
 @media (any-hover:hover) and (any-pointer:fine) {
   .footer .s-ir1:hover {
     box-shadow: none;
@@ -305,14 +320,16 @@ body {
 /* 태블릿 ************************************* */
 @media (max-width:1023px) {
   /* 태블릿 사이즈 이하 ****** */
-  
+
   @media (max-width:767px) {
+
     /* 스마트폰 사이즈 이하 ** */
-  .footer__copy, .footer__sns {
+    .footer__copy,
+    .footer__sns {
       text-align: center;
       width: 100%;
       margin: 0 8px;
-    }  
+    }
   }
 }
 
@@ -423,7 +440,7 @@ body {
   .index-main__deco-sprinkles {
     bottom: 0;
   }
-  
+
   /* 태블릿 터치 스크린 ********** */
   @media (hover:none) {
     #index-main {
@@ -457,7 +474,7 @@ body {
       bottom: 0;
     }
   }
-  
+
   /* 스마트폰 ***************** */
   @media (max-width:767px) {
     #index-main {
@@ -476,22 +493,22 @@ body {
     .index-main__intro-contect {
       justify-content: center;
     }
-    
+
     .index-main__intro-contect button {
       display: none;
     }
-    
+
     .intro-contect__list {
       margin-left: 0;
       column-gap: 1em;
       width: auto;
       overflow: visible;
     }
-    
+
     .intro-contect__list li a {
       margin-right: 0;
     }
-    
+
     .index-main__deco {
       margin-top: 3vh;
       margin-right: 0;
@@ -525,10 +542,12 @@ body {
   padding: 120px 0;
   background: url(../img/deco/bg_color.svg) no-repeat center/cover;
 }
+
 .index-about__title dd {
   position: relative;
   display: inline-block;
 }
+
 .index-about__title dd::after {
   content: '';
   display: block;
@@ -547,16 +566,18 @@ body {
   align-items: flex-start;
   column-gap: 5em;
 }
-  
+
 .index-about__cont-txt {
   flex: 1 auto;
   line-height: 1.4;
   font-size: 1.7rem;
   word-break: keep-all;
 }
+
 .index-about__cont-txt span {
   position: relative;
 }
+
 .index-about__cont-txt span::after {
   content: '';
   display: block;
@@ -575,6 +596,7 @@ body {
   max-width: 400px;
   position: relative;
 }
+
 .index-about__cont-img::before {
   content: '';
   display: block;
@@ -585,6 +607,7 @@ body {
   right: -30px;
   top: -70px;
 }
+
 .index-about__cont-img::after {
   content: '';
   display: block;
@@ -615,18 +638,18 @@ body {
   margin-top: 1em;
   column-gap: 1em;
 }
-  
+
 
 /* 태블릿 **************************** */
 @media (max-width:1023px) {
   #index-about {
     --wrap-width: 70%;
   }
-  
+
   .index-about__title {
     text-align: center;
   }
-  
+
   .index-about__cont {
     margin-top: 60px;
     align-items: center;
@@ -634,46 +657,50 @@ body {
     flex-wrap: wrap-reverse;
     column-gap: 2em;
   }
-  
+
   .index-about__cont-txt {
     margin-top: 30px;
     font-size: 1.6rem;
     word-break: normal;
   }
 
+  .index-about__cont-txt span {
+    word-break: keep-all;
+  }
+
   .index-about__cont-img {
     text-align: center;
     width: 40vw;
   }
+
   .index-about__cont-img::before {
     display: none;
   }
-  
+
   /* 태블릿 터치 스크린 */
-  @media (hover:none){
-    
-  }
-  
+  @media (hover:none) {}
+
   /* 스마트폰 *********************** */
   @media (max-width:767px) {
     #index-about {
       --wrap-width: 88%;
       margin-top: 0;
     }
+
     .index-about__cont-img {
       width: 70%;
       min-width: 300px;
     }
-    
+
     .index-about__cont-txt {
-    font-size: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+
   }
-    
-    
-  }
-  
-  
-  
+
+
+
 }
 
 
@@ -686,7 +713,8 @@ body {
 #index-skill {
   overflow: hidden;
 }
-.index-skill__wrap{
+
+.index-skill__wrap {
   padding: 120px 0 200px;
 }
 
@@ -701,10 +729,11 @@ body {
   left: calc(50% - calc(1012px * 3));
   top: -1000px;
   z-index: -1;
-  transform:  rotate(-90deg);
+  transform: rotate(-90deg);
   opacity: 0;
   transition: 1s;
 }
+
 .index-skill__wrap.on::before {
   width: calc(2024px * 0.8);
   height: calc(1670px * 0.8);
@@ -717,17 +746,17 @@ body {
 
 .index-skill__title {
   text-align: center;
-} 
+}
 
-  
+
 .index-skill__cont {
   --border-radius: 50px;
   margin-top: 50px;
   border-radius: var(--border-radius);
-  width: 100%;  
+  width: 100%;
   box-shadow: var(--box-shadow-long);
-}  
-  
+}
+
 .index-skill__cont-list {
   width: 100%;
   border-radius: var(--border-radius);
@@ -737,18 +766,16 @@ body {
   flex-wrap: wrap;
   padding: 3%;
   column-gap: 2.5%;
-  
-}  
-  
+
+}
+
 .index-skill__cont-list li {
   flex-basis: calc(90% / 5);
   margin-bottom: 3%;
   cursor: pointer;
 }
 
-.skill__item-def {
-  
-}
+.skill__item-def {}
 
 .skill__ico {
   background: var(--img-bundle);
@@ -760,7 +787,7 @@ body {
 .skill__prograss {
   --height: 26px;
   --border-radius: 30px;
-  
+
   width: 100%;
   margin-top: 8%;
   height: var(--height);
@@ -773,65 +800,78 @@ body {
   height: 100%;
   border-radius: var(--border-radius);
   background: linear-gradient(90deg, var(--color3) 0%, #AF18FD 100%);
-  box-shadow: inset -6px -6px 10px var(--color4); 
+  box-shadow: inset -6px -6px 10px var(--color4);
   transition: 0.8s;
 }
+
 .on.prograss-html {
- width: 70%; 
+  width: 70%;
 }
+
 .on.prograss-css {
- width: 70%; 
+  width: 70%;
 }
+
 .on.prograss-js {
- width: 60%; 
+  width: 60%;
 }
+
 .on.prograss-xd {
- width: 70%; 
+  width: 70%;
 }
+
 .on.prograss-ps {
- width: 70%; 
+  width: 70%;
 }
+
 .on.prograss-li {
- width: 70%; 
+  width: 70%;
 }
+
 .on.prograss-fc {
- width: 60%; 
+  width: 60%;
 }
+
 .on.prograss-ms {
- width: 60%; 
+  width: 60%;
 }
 
 
-.skill__item-hover { 
+.skill__item-hover {
   width: 100%;
   height: 100%;
   border-radius: var(--item-border-radius);
-  box-shadow: 3px 6px 30px var(--color4); 
+  box-shadow: 3px 6px 30px var(--color4);
   border: 4px solid #fff;
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
-}@media (any-hover:hover) and (any-pointer:fine) {
+}
+
+@media (any-hover:hover) and (any-pointer:fine) {
   .index-skill__cont-list li:hover .skill__item-hover {
     opacity: 1;
   }
 }
-@media (hover:none){
+
+@media (hover:none) {
   .index-skill__cont-list li.on .skill__item-hover {
     opacity: 1;
-  }    
+  }
 }
 
 
 .skill__item-hover dl {
   padding: 1.4vw;
 }
+
 .skill__item-hover dl dt {
   font-weight: bold;
   font-size: 1.8rem;
   justify-content: space-between;
 }
+
 .skill__item-hover dl dt a {
   border-radius: 100%;
   color: var(--color-w);
@@ -840,32 +880,35 @@ body {
   transform: rotate(0deg);
   transition: 1s;
 }
+
 .skill__item-hover dl dt a.on {
   transform: rotate(720deg);
 }
+
 @media (any-hover:hover) and (any-pointer:fine) {
   .index-skill__cont-list li:hover .skill__item-hover dl dt a {
     transform: rotate(720deg);
-  } 
+  }
 }
 
 .skill__item-hover dl dd {
   margin-top: 6%;
   line-height: 1.4;
-    font-size: clamp(13px, 1.3vw, 16px);
+  font-size: clamp(13px, 1.3vw, 16px);
 }
 
 
 /* 태블릿 ************************************* */
 @media (max-width:1023px) {
-  /* 태블릿 사이즈 이하 ****** */  
-  
-  
+  /* 태블릿 사이즈 이하 ****** */
+
+
   .index-skill__wrap::before {
     width: calc(2024px * 2);
     height: calc(1670px * 2);
     left: calc(50% - calc(1012px * 2));
   }
+
   .index-skill__wrap.on::before {
     width: calc(2024px * 0.5);
     height: calc(1670px * 0.5);
@@ -875,43 +918,45 @@ body {
 
   .index-skill__cont {
     --border-radius: 30px;
-  }  
-  
+  }
+
   .index-skill__cont-list {
     column-gap: 3%;
-  }  
+  }
 
   .index-skill__cont-list li {
     flex-basis: calc(91% / 4);
   }
-  
+
   .skill__item-hover dl {
-  padding: 2vw 1.5vw;
+    padding: 2vw 1.5vw;
   }
+
   .skill__item-hover dl dt {
     font-size: clamp(15px, 2vw, 18px);
   }
+
   .skill__item-hover dl dd {
     margin-top: 6%;
     font-size: clamp(13px, 1.4vw, 16px);
   }
-  
-  
-  
-  
+
+
+
+
   @media (max-width:767px) {
     /* 스마트폰 ****** */
-    
+
     .index-skill__wrap::before {
       display: none;
     }
-    
+
     .index-skill__title dd {
       width: 80%;
       margin: 0.6em auto 0;
       word-break: keep-all;
     }
-    
+
     .s-itembox-inner {
       padding: 4vw 10%;
     }
@@ -919,7 +964,7 @@ body {
     .index-skill__cont-list {
       padding: 6vw 6vw 0 6vw;
       column-gap: 10%;
-    }  
+    }
 
     .index-skill__cont-list li {
       flex-basis: calc(90% / 2);
@@ -928,44 +973,39 @@ body {
     }
 
     .skill__item-hover dl {
-    padding: 3vw 2vw;
+      padding: 3vw 2vw;
     }
+
     .skill__item-hover dl dt {
       font-size: clamp(15px, 1.8rem, 24px);
     }
+
     .skill__item-hover dl dd {
       margin-top: 5%;
       line-height: 1.3;
       font-size: clamp(13px, 1.4rem, 18px);
     }
+
     .skill__prograss {
       --height: 20px;
       margin-top: 14%;
-    }  
-    
-    
-    @media (hover:none){
+    }
+
+
+    @media (hover:none) {
       .s-itembox-outer {
         --item-border-radius: 20px;
       }
+
       .skill__item-hover dl dt {
         font-size: clamp(15px, 2vw, 18px);
       }
+
       .skill__item-hover dl dd {
         font-size: clamp(13px, 1.4vw, 16px);
       }
-      
-      
+
+
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
