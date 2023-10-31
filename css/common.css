@@ -81,12 +81,11 @@
   /*(70%)*/
   --hsl-color4: hsl(259.459, 52%, 70%);
   /*(42%)*/
-  --rgba-color1: rgba(0, 78, 255, 0.5);
+  --rgba-color1: rgba(0, 78, 255, 0.3);
   --rgba-color4: rgba(88, 25, 163, 0.3);
 
   /*그림자 스타일 --------------------*/
   --box-shadow-short: 3px 3px 10px #00000044;
-  /* 기본 짧은 그림자 */
   --box-shadow-long: 3px 6px 20px #00000033;
   /* 기본 긴그림자 */
 
@@ -279,6 +278,7 @@
   box-shadow: var(--box-shadow-long);
   display: block;
   position: relative;
+  cursor: pointer;
 
 }
 

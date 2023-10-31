@@ -95,7 +95,9 @@ body {
   left: 50%;
   bottom: 2px;
 }
-
+.nav__btn.on:hover {
+  color: var(--color1);
+}
 @media(hover:hover) and (any-pointer:fine) and (min-width:768px) {
   .nav__btn:hover {
     color: var(--color1);
@@ -266,12 +268,6 @@ body {
     .header__blank::after {
       display: none;
     }
-
-
-
-
-
-
 
   }
 }
@@ -772,10 +768,7 @@ body {
 .index-skill__cont-list li {
   flex-basis: calc(90% / 5);
   margin-bottom: 3%;
-  cursor: pointer;
 }
-
-.skill__item-def {}
 
 .skill__ico {
   background: var(--img-bundle);
@@ -1009,3 +1002,242 @@ body {
     }
   }
 }
+
+
+
+
+
+
+
+
+/* section of project
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* #project-main 공통 pc기본 ********************************* */
+#project-main {
+  padding: 150px 0 200px;
+}
+.project-main__title {
+  --font-size-dd: 2.4rem;
+  text-align: center;
+  position: relative;
+}
+.project-main__title::before {
+  content: '';
+  display: block;
+  background: url(../img/deco/obj_projectgirl.svg) no-repeat;
+  background-size: contain;
+  width: calc(357px * 0.9);
+  height: calc(330px * 0.9);
+  min-width: calc(357px * 0.5);
+  min-height: calc(330px * 0.5);
+  position: absolute;
+  left: 0;
+  top: -40%;
+  z-index: -1;
+}
+
+.project-main__cont {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 3%;
+}
+.project__item {
+  min-width: 200px;
+}
+
+@media (any-hover:hover) and (any-pointer:fine) {
+  .project__item:hover {
+    box-shadow: 3px 3px 30px var(--color2);
+  }
+  .project__item:hover .project__item-des dt {
+    color: var(--color2);
+  }
+}
+
+
+.project__item-inner {
+  box-shadow: inset -3px -3px 30px var(--rgba-color1);
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  max-height: 350px;
+  padding: 6%;
+}
+.project__item-img {
+  --border-radius: 15px;
+  background: url(../img/cont/project_yd.svg) no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 15vw;
+  max-height: 200px;
+}
+.p-md .project__item-img {
+  background-image: url(../img/cont/project_md.svg);
+}
+.p-pf .project__item-img {
+  background-image: url(../img/cont/project_pf.svg);
+}
+
+
+.project__item-des {
+  margin-top: 8%;
+  text-align: center;
+  font-family: var(--font-family-title);
+  width: 100%;
+}
+.project__item-des dt {
+  font-size: 2rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.project__item-des dd {
+  font-family: var(--font-family-main);
+  margin: 5% 0 10%;
+  color: #aaa;
+  font-size: 1.4rem;
+}
+
+
+/* 태블릿 ************************************* */
+@media (max-width:1023px) {
+  /* 태블릿 사이즈 이하 ****** */
+  #project-main {
+    padding: 100px 0 200px;
+  }
+  .project-main__title {
+    --font-size-dt: 6vw;
+    --font-size-dd: 2.6vw;
+  }
+  .project-main__title::before {
+    width: calc(357px * 0.7);
+    height: calc(330px * 0.7);
+    top: 0;
+  }
+  .project__item-des {
+    margin-top: 8%;
+    text-align: center;
+  }
+  .project__item-des dt {
+    font-size: 1.6rem;
+  }
+  .project__item-des dd {
+    font-size: 1.2rem;
+  }
+
+
+  @media (hover:none) {
+    .project-main__cont {
+      margin-top: 100px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 5%;
+    }
+    .project__item {
+      min-width: 100px;
+    }
+    .project__item-des dt {
+      font-size: 2rem;
+    }
+    .project__item-des dd {
+      font-size: 1.4rem;
+    }
+    .project__item-img {
+      --border-radius: 15px;
+      background: url(../img/cont/project_yd.svg) no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 25vw;
+      max-height: 200px;
+    }
+
+  }
+  @media (max-width:767px) {
+    /* 스마트폰 ****** */
+    #project-main {
+      padding: 100px 0 300px;
+    }
+    #project-main::after {
+      content: '';
+      display: block;
+      background: url(../img/deco/obj_projectgirl.svg) no-repeat;
+      background-size: contain;
+      width: calc(357px * 0.6);
+      height: calc(330px * 0.6);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+    }  
+    
+    .project-main__title {
+      --font-size-dt: 8vw;
+      --font-size-dd: 2.4vw;
+    }
+    .project-main__title::before {
+      display: none;
+    }
+
+    
+    .project-main__cont {
+      margin: 50px 10% 0 10%;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 5%s;
+    }
+    
+    .project__item-inner {
+      box-shadow: inset -3px -3px 30px var(--rgba-color1);
+      justify-content:center;
+      align-items: center;
+      flex-direction: column;
+      max-height: 350px;
+      padding: 6%;
+    }  
+    
+    .project__item-des dt {
+      font-size: clamp(1.6rem, 3vw, 24px );
+    }
+    .project__item-des dd {
+      margin: 3% 0 5%;
+    }
+    .project__item-img {
+      --border-radius: 15px;
+      background: url(../img/cont/project_yd.svg) no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 30vw;
+      max-height: 300px;
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
