@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88" height="173.711" viewBox="0 0 88 173.711">
+  <defs>
+    <filter id="사각형_155" x="0" y="0" width="88" height="88" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="사각형_155-2" x="0" y="85.711" width="88" height="88" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="그룹_196" data-name="그룹 196" transform="translate(-94 -213.29)">
+    <g id="그룹_194" data-name="그룹 194" transform="translate(-1189 219.29)">
+      <g transform="matrix(1, 0, 0, 1, 1283, -6)" filter="url(#사각형_155)">
+        <rect id="사각형_155-3" data-name="사각형 155" width="70" height="70" transform="translate(6 6)" fill="#fff"/>
+      </g>
+      <g id="그룹_193" data-name="그룹 193" transform="translate(64.292 -8179.104) rotate(45)">
+        <line id="선_9" data-name="선 9" y2="50" transform="translate(6699.5 4892.5)" fill="none" stroke="#9ca5b2" stroke-linecap="round" stroke-width="5"/>
+        <line id="선_8" data-name="선 8" x1="50" transform="translate(6674.5 4917.5)" fill="none" stroke="#9ca5b2" stroke-linecap="round" stroke-width="5"/>
+      </g>
+    </g>
+    <g id="그룹_195" data-name="그룹 195" transform="translate(-1189 305)">
+      <g transform="matrix(1, 0, 0, 1, 1283, -91.71)" filter="url(#사각형_155-2)">
+        <rect id="사각형_155-4" data-name="사각형 155" width="70" height="70" transform="translate(6 91.71)" fill="#9ca5b2"/>
+      </g>
+      <g id="그룹_193-2" data-name="그룹 193" transform="translate(64.292 -8179.104) rotate(45)">
+        <line id="선_9-2" data-name="선 9" y2="50" transform="translate(6699.5 4892.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="5"/>
+        <line id="선_8-2" data-name="선 8" x1="50" transform="translate(6674.5 4917.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="5"/>
+      </g>
+    </g>
+  </g>
+</svg>

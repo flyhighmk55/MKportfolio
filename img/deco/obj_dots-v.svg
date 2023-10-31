@@ -1,0 +1,27 @@
+<svg id="그룹_95" data-name="그룹 95" xmlns="http://www.w3.org/2000/svg" width="31.698" height="189.888" viewBox="0 0 31.698 189.888">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c9daf7;
+      }
+    </style>
+  </defs>
+  <g id="그룹_76" data-name="그룹 76" transform="translate(24.005 29.325)">
+    <path id="패스_113" data-name="패스 113" class="cls-1" d="M236.652,210.51a3.845,3.845,0,1,1,3.848,3.847A3.848,3.848,0,0,1,236.652,210.51Z" transform="translate(-236.652 -53.796)"/>
+    <ellipse id="타원_23" data-name="타원 23" class="cls-1" cx="3.846" cy="3.846" rx="3.846" ry="3.846" transform="translate(0.001 127.391)"/>
+    <ellipse id="타원_24" data-name="타원 24" class="cls-1" cx="3.846" cy="3.846" rx="3.846" ry="3.846" transform="translate(0.001 101.913)"/>
+    <path id="패스_114" data-name="패스 114" class="cls-1" d="M236.652,194.539a3.845,3.845,0,1,1,3.848,3.843A3.848,3.848,0,0,1,236.652,194.539Z" transform="translate(-236.652 -114.257)"/>
+    <path id="패스_115" data-name="패스 115" class="cls-1" d="M236.652,189.214a3.845,3.845,0,1,1,3.848,3.843A3.848,3.848,0,0,1,236.652,189.214Z" transform="translate(-236.652 -134.411)"/>
+    <path id="패스_116" data-name="패스 116" class="cls-1" d="M236.652,183.89a3.845,3.845,0,1,1,3.848,3.843A3.848,3.848,0,0,1,236.652,183.89Z" transform="translate(-236.652 -154.565)"/>
+    <ellipse id="타원_25" data-name="타원 25" class="cls-1" cx="3.846" cy="3.846" rx="3.846" ry="3.846" transform="translate(0.001)"/>
+  </g>
+  <g id="그룹_77" data-name="그룹 77" transform="translate(0 0)">
+    <path id="패스_117" data-name="패스 117" class="cls-1" d="M231.636,204.379a3.845,3.845,0,1,1,3.843,3.848A3.84,3.84,0,0,1,231.636,204.379Z" transform="translate(-231.634 -47.664)"/>
+    <path id="패스_118" data-name="패스 118" class="cls-1" d="M231.636,199.055a3.845,3.845,0,1,1,3.843,3.847A3.839,3.839,0,0,1,231.636,199.055Z" transform="translate(-231.634 -67.818)"/>
+    <ellipse id="타원_26" data-name="타원 26" class="cls-1" cx="3.846" cy="3.846" rx="3.846" ry="3.846" transform="translate(0 101.914)"/>
+    <path id="패스_119" data-name="패스 119" class="cls-1" d="M231.636,188.407a3.845,3.845,0,1,1,3.843,3.848A3.84,3.84,0,0,1,231.636,188.407Z" transform="translate(-231.634 -108.126)"/>
+    <path id="패스_120" data-name="패스 120" class="cls-1" d="M231.636,183.086a3.845,3.845,0,1,1,3.843,3.848A3.844,3.844,0,0,1,231.636,183.086Z" transform="translate(-231.634 -128.283)"/>
+    <path id="패스_121" data-name="패스 121" class="cls-1" d="M231.636,177.762a3.845,3.845,0,1,1,3.843,3.847A3.844,3.844,0,0,1,231.636,177.762Z" transform="translate(-231.634 -148.437)"/>
+    <path id="패스_122" data-name="패스 122" class="cls-1" d="M231.636,172.438a3.845,3.845,0,1,1,3.843,3.848A3.844,3.844,0,0,1,231.636,172.438Z" transform="translate(-231.634 -168.591)"/>
+  </g>
+</svg>

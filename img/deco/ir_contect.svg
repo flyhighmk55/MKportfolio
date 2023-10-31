@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="355" height="50" viewBox="0 0 355 50">
+  <defs>
+    <filter id="패스_216" x="0" y="0" width="50" height="50" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="패스_226" x="60" y="0" width="50" height="50" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161" result="color-2"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color-2"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="패스_234" x="120" y="0" width="50" height="50" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161" result="color-3"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-3"/>
+      <feComposite operator="in" in="color-3"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="그룹_186" data-name="그룹 186" transform="translate(-2377 -8620)">
+    <text id="_50x50_index-main-ir" data-name="50x50 index-main-ir" transform="translate(2580 8649)" fill="#222" font-size="14" font-family="GmarketSansMedium, Gmarket Sans"><tspan x="0" y="0">50x50 index-main-ir</tspan></text>
+    <g id="그룹_178" data-name="그룹 178" transform="translate(1877 7997)">
+      <g id="그룹_176" data-name="그룹 176" transform="translate(-3 -2)">
+        <g data-type="innerShadowGroup">
+          <path id="패스_216-2" data-name="패스 216" d="M65.928,40.928a25,25,0,1,0,25,25A25,25,0,0,0,65.928,40.928Z" transform="translate(462.072 584.072)" fill="#edf3fc"/>
+          <g transform="matrix(1, 0, 0, 1, 503, 625)" filter="url(#패스_216)">
+            <path id="패스_216-3" data-name="패스 216" d="M65.928,40.928a25,25,0,1,0,25,25A25,25,0,0,0,65.928,40.928Z" transform="translate(-40.93 -40.93)" fill="#fff"/>
+          </g>
+        </g>
+        <g id="그룹_171" data-name="그룹 171" transform="translate(2.978 4.606)">
+          <path id="XMLID_27_" d="M193.354,116.922c1.39.114,5.431,2.285,5.9,5.751.569,4.18-9.333,20.108-15.14,20.856a8.2,8.2,0,0,1-1.737.044c-4.11-.336-6.321-3.223-6.352-4.6s1.978-3.843,3.477-4.1a3.977,3.977,0,0,1,2.951,1.282,2.72,2.72,0,0,0,3.406.521c1.97-.813,7.174-8.065,7.3-10.039.088-1.347-1.213-1.906-2.315-2.924a3.833,3.833,0,0,1-1.2-2.915C189.718,119.76,191.746,116.791,193.354,116.922Z" transform="translate(337.698 515.476)" fill="#5d8ef9"/>
+          <path id="패스_223" data-name="패스 223" d="M227.745,191.846a.529.529,0,0,1-.52-.435,5.482,5.482,0,0,1,4.413-6.364.529.529,0,0,1,.188,1.04,4.424,4.424,0,0,0-3.561,5.136.529.529,0,0,1-.521.623Z" transform="translate(291.992 454.558)" fill="#fae100"/>
+          <path id="패스_224" data-name="패스 224" d="M199.729,168.918a.529.529,0,0,1-.52-.435,7.675,7.675,0,0,1,6.184-8.92.529.529,0,1,1,.188,1.04,6.617,6.617,0,0,0-5.333,7.691.529.529,0,0,1-.426.614A.535.535,0,0,1,199.729,168.918Z" transform="translate(317.078 477.347)" fill="#fae100"/>
+          <path id="패스_225" data-name="패스 225" d="M170.068,144.629a.529.529,0,0,1-.52-.435,10.013,10.013,0,0,1,8.059-11.624.529.529,0,1,1,.188,1.04,8.955,8.955,0,0,0-7.207,10.4.529.529,0,0,1-.426.614A.536.536,0,0,1,170.068,144.629Z" transform="translate(343.635 501.486)" fill="#fae100"/>
+        </g>
+      </g>
+      <g id="그룹_175" data-name="그룹 175" transform="translate(-4 2)">
+        <g data-type="innerShadowGroup">
+          <path id="패스_226-2" data-name="패스 226" d="M65.928,40.928a25,25,0,1,0,25,25A25,25,0,0,0,65.928,40.928Z" transform="translate(523.072 580.072)" fill="#edf3fc"/>
+          <g transform="matrix(1, 0, 0, 1, 504, 621)" filter="url(#패스_226)">
+            <path id="패스_226-3" data-name="패스 226" d="M65.928,40.928a25,25,0,1,0,25,25A25,25,0,0,0,65.928,40.928Z" transform="translate(19.07 -40.93)" fill="#fff"/>
+          </g>
+        </g>
+        <g id="그룹_172" data-name="그룹 172" transform="translate(3.913 -1.473)">
+          <path id="패스_231" data-name="패스 231" d="M132.3,190.6H121.025a2.287,2.287,0,0,1-2.287-2.287v-9.441h-2.162a2.287,2.287,0,0,0-2.286,2.286v10.12a2.287,2.287,0,0,0,2.286,2.287l-1.4,5.552,7.932-5.552H134.38a2.276,2.276,0,0,0,1.434-.506Z" transform="translate(456.797 459.566)" fill="#5d8ef9"/>
+          <path id="패스_232" data-name="패스 232" d="M179.759,163.313l1.4,5.552-7.932-5.552H161.956a2.287,2.287,0,0,1-2.287-2.287v-10.12a2.287,2.287,0,0,1,2.287-2.286h17.8a2.287,2.287,0,0,1,2.286,2.286v10.12a2.287,2.287,0,0,1-2.286,2.287Z" transform="translate(415.867 486.854)" fill="#330d84"/>
+          <circle id="타원_45" data-name="타원 45" cx="1.68" cy="1.68" r="1.68" transform="translate(579.196 641.646) rotate(-22.5)" fill="#fae100"/>
+          <circle id="타원_46" data-name="타원 46" cx="1.68" cy="1.68" r="1.68" transform="translate(584.53 641.646) rotate(-22.5)" fill="#fae100"/>
+          <circle id="타원_47" data-name="타원 47" cx="1.68" cy="1.68" r="1.68" transform="translate(589.865 641.646) rotate(-22.5)" fill="#fae100"/>
+        </g>
+      </g>
+      <g id="그룹_174" data-name="그룹 174" transform="translate(-4 -2)">
+        <g data-type="innerShadowGroup">
+          <path id="패스_234-2" data-name="패스 234" d="M65.928,40.928a25,25,0,1,0,25,25A25,25,0,0,0,65.928,40.928Z" transform="translate(583.072 584.072)" fill="#edf3fc"/>
+          <g transform="matrix(1, 0, 0, 1, 504, 625)" filter="url(#패스_234)">
+            <path id="패스_234-3" data-name="패스 234" d="M65.928,40.928a25,25,0,1,0,25,25A25,25,0,0,0,65.928,40.928Z" transform="translate(79.07 -40.93)" fill="#fff"/>
+          </g>
+        </g>
+        <g id="그룹_173" data-name="그룹 173" transform="translate(3.068 4.122)">
+          <g id="그룹_170" data-name="그룹 170">
+            <path id="패스_236" data-name="패스 236" d="M143.147,160.135A11.183,11.183,0,0,1,141,153.6c0-6.957,6.626-12.6,14.8-12.6s14.8,5.64,14.8,12.6-6.625,12.6-14.8,12.6a16.808,16.808,0,0,1-7.039-1.514L141,167.243Z" transform="translate(489.932 491.878)" fill="#fae100"/>
+            <text id="TALK" transform="translate(634.961 648.5)" fill="#3c1d1e" stroke="#3c1d1e" stroke-width="0.5" font-size="9" font-family="BMJUAOTF, BM JUA_OTF" letter-spacing="-0.02em"><tspan x="0" y="0">TALK</tspan></text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
