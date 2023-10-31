@@ -1,0 +1,35 @@
+/*웹폰트를 열심히 모아보자~*/
+
+
+/*@import------------------------------------------------------------------*/
+
+/* SUITE */
+@import url("https://cdn.jsdelivr.net/gh/sun-typeface/SUITE/fonts/variable/woff2/SUITE-Variable.css");
+
+.ff-suite { font-family: 'SUITE Variable', sans-serif; }
+
+
+
+/*font-face------------------------------------------------------------------*/
+
+/*지마켓 산스 300, 500, 700*/
+@font-face {
+    font-family: 'gms';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.ff-gms { font-family: 'gms'; font-weight: 700; }
+
+
+/*예스 고딕 400, 700*/
+@font-face {
+    font-family: 'ygt';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESGothic-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.ff-ygt { font-family: 'ygt'; font-weight: 700; }
+
