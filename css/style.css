@@ -583,11 +583,11 @@ body {
   flex: 1 auto;
   line-height: 1.4;
   font-size: 1.7rem;
-  word-break: keep-all;
 }
 
 .index-about__cont-txt span {
   position: relative;
+  word-break: keep-all;
 }
 
 .index-about__cont-txt span::after {
