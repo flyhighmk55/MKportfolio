@@ -132,7 +132,7 @@
 
   /*태블릿*/
   :root {
-    --root-font-size: 70%;
+    --root-font-size: 65%;
     --header-height: 100px;
   }
 
@@ -194,29 +194,33 @@
 
 .s-tit1 {
   --font-size-dt: 6rem;
-  --font-size-dd: 4rem;
-  font-size: clamp(20px, var(--font-size-dt), 60px);
+  --font-size-dd: 2rem;
+  font-size: clamp(26px, var(--font-size-dt), 60px);
   font-family: var(--font-family-title);
   font-weight: bold;
   line-height: 1.4;
+  text-align: center;
+  margin: 150px 0 100px;
 }
 .s-tit1 dt span {
   color: var(--color2);
 }
 .s-tit1 dd {
-  font-size: clamp(18px, var(--font-size-dd), 40px);
+  font-size: clamp(16px, var(--font-size-dd), 40px);
   margin-top: 0.2em;
 }
 @media (max-width:1023px) {
   .s-tit1 {
-    --font-size-dt: 8vw;
-    --font-size-dd: 5vw;
+    --font-size-dt: 5vw;
+    --font-size-dd: 2vw;
+    margin: 8vh 0 100px;
   }
 }
 @media (max-width:767px) {
   .s-tit1 {
-    --font-size-dt: 11vw;
-    --font-size-dd: 6vw;
+    --font-size-dt: 5vw;
+    --font-size-dd: 1.6vw;
+    margin: 8vh 0 4vh;
   }
 }
 
