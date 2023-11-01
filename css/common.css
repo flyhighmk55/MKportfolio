@@ -206,6 +206,7 @@
   color: var(--color2);
 }
 .s-tit1 dd {
+  font-family: var(--font-family-main);
   font-size: clamp(16px, var(--font-size-dd), 40px);
   margin-top: 0.2em;
 }
@@ -228,15 +229,17 @@
 .s-tit2 {  
   --font-size-dt: 3.4rem;
   --font-size-dd: 2.2rem;
-  font-family: var(--font-family-title);
+  font-family: var(--font-family-btn);
   font-weight: bold;
   line-height: 1.2;
 }
 .s-tit2 dt {
   font-size: clamp(20px, var(--font-size-dt), 34px);
+  font-weight: 900;
   color: var(--color4);
 }
 .s-tit2 dd {
+  font-family: var(--font-family-main);
   font-size: clamp(18px, var(--font-size-dd), 28px);
   margin-top: 0.6em;
   line-height: 1.4;
@@ -244,7 +247,7 @@
 
 @media (max-width:767px) {
   .s-tit2 {
-    --font-size-dt: 8vw;
+    --font-size-dt: 7vw;
     --font-size-dd: 3vw;
   }
 }
