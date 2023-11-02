@@ -66,7 +66,7 @@ $('#project-popup').on('click', function (e) {
 //    once: false,
 //    });
     //팝업창을 새로고침하여 다시 열였을 때 AOS가 작동할 수 있도록 준비해라 
-    $('#project-popup').reload(location.href + '#project-popup');
+    $('.popup__func-item').reload(location.href + '.popup__func-item');
 //      location.reload('true');
 //    location.href = location.href; 
   }
