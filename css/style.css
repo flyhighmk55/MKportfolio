@@ -44,6 +44,7 @@ body {
   left: 0;
   top: 0;
   z-index: 20;
+  transition: 0.3s;
 }
 
 .header.scroll {
@@ -76,7 +77,6 @@ body {
   padding: 0.5em 1em;
   margin-left: 8%;
   position: relative;
-
 }
 
 .nav__btn.on {
@@ -94,6 +94,7 @@ body {
   position: absolute;
   left: 50%;
   bottom: 2px;
+  transition: 0.3s;
 }
 .nav__btn.on:hover {
   color: var(--color1);
@@ -194,6 +195,7 @@ body {
       /* js */
       height: 0;
       overflow: hidden;
+      transition: 0.3s;
     }
 
     .header__center.on {
@@ -218,6 +220,7 @@ body {
       border: 1px solid #fff;
       text-align: center;
       background-color: var(--color3);
+      transition: 0.3s;
     }
 
     @media (any-hover:hover) and (any-pointer:fine) {
@@ -252,6 +255,7 @@ body {
       height: 100%;
       font-size: 50px;
       color: var(--color-b);
+      transition: 0.3s;
     }
 
     @media (any-hover:hover) and (any-pointer:fine) {
@@ -387,6 +391,7 @@ body {
   margin-left: -2em;
   width: 0;
   overflow: hidden;
+  transition: 0.3s;
 }
 
 .intro-contect__list.on {
@@ -857,6 +862,7 @@ body {
   top: 0;
   left: 0;
   opacity: 0;
+  transition: 0.3s;
 }
 
 @media (any-hover:hover) and (any-pointer:fine) {
@@ -889,6 +895,7 @@ body {
   padding: 3.4% 5%;
   transform: rotate(0deg);
   transition: 1s;
+  transition: 0.3s;
 }
 
 .skill__item-hover dl dt a.on {
@@ -1057,14 +1064,12 @@ body {
 }
 .project__item {
   min-width: 200px;
+  transition: 0.3s;
 }
 
 @media (any-hover:hover) and (any-pointer:fine) {
   .project__item:hover {
     box-shadow: 3px 3px 30px var(--color2);
-  }
-  .project__item:hover .project__item-des dt {
-    color: var(--color2);
   }
 }
 
@@ -1104,7 +1109,14 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  transition: 0.3s;
 }
+@media (any-hover:hover) and (any-pointer:fine) {
+  .project__item:hover .project__item-des dt {
+    color: var(--color2);
+  }
+}
+
 .project__item-des dd {
   font-family: var(--font-family-main);
   margin: 4% 0;
@@ -1233,10 +1245,9 @@ body {
   height: 0%;
   overflow-y: scroll;
   opacity: 0;
-/*  display: none;*/
+  
 }
 #project-popup.on {
-/*  display: block;*/
   height: 100%;
   overflow-x: visible;
   opacity: 1;
@@ -1246,9 +1257,11 @@ body {
   box-shadow: var(--box-shadow-long);
 }
 .project-popup-close {
+  display: none;
   position: absolute;
   right: 0;
   top: 0;
+  z-index: 1;
   box-shadow: var(--box-shadow-short);
   cursor: pointer;
 }
@@ -1257,9 +1270,10 @@ body {
   overflow-x: hidden;
   height: 100%;
   opacity: 0;
+  display: none;
 }
 .project-popup__cont.on {
-  width: 100%;
+  display: block;
   overflow-x: visible;
   opacity: 1;
 }
@@ -1299,6 +1313,11 @@ body {
   max-height: 500px;
   margin-top: 10px;
 }
+.popup__main-img img {  
+  width: 100%;
+  object-fit: cover;
+}
+
 .popup__main-info {
   margin: 30px 0 50px;
   display: grid;
@@ -1398,6 +1417,7 @@ body {
   margin: auto 0 100px auto;
   width: 80%;
   position: relative;
+  cursor: default;
 }
 .popup__func-item:nth-last-of-type(2) {
   --item-border-radius: 0 30px 30px 0;
@@ -1414,7 +1434,7 @@ body {
   max-width: 212px;
   max-height: 330px;
   position: absolute;
-  left: calc(-202px * 0.8);  
+  left: calc(-200px * 0.8);  
   bottom: -10px;
 }
 .popup__func-item:nth-of-type(2)::after {
@@ -1492,7 +1512,18 @@ body {
 /* 태블릿 ************************************* */
 @media (max-width:1023px) {
   /* 태블릿 사이즈 이하 ****** */
-
+  .poject-popup__frame {
+    width: 100%;
+  }
+  .project-popup-close {
+    display: block;
+    transition: 0.3s;
+  }
+  @media (any-hover:hover) and (any-pointer:fine){
+    .project-popup-close:hover {
+      filter: brightness(0.9);
+    }
+  }
   @media (max-width:767px) {
     /* 스마트폰 ****** */
   }

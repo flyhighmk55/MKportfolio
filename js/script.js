@@ -62,11 +62,10 @@ $('.header__center').on('click', function (e) {
 
 
 
-//[animation] 스크롤의 높이가 section으로 넘어가면 헤더의 색을 바꿔라
+//[animation] 스크롤이 시작되면 헤더의 색을 바꿔라
 $(window).scroll(function () {
-  var offset = $('section').offset().top;
   var top = $('body, html').scrollTop();
-  if (offset <= top) {
+  if (top >= 30 ) {
     $('.header').addClass('scroll');
   } else {
     $('.header').removeClass('scroll');
