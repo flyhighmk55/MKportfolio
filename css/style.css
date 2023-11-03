@@ -1327,7 +1327,7 @@ https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
   position: relative;
 }
 
-.popup__main-title::after {
+.popup__main-title::before {
   content: '';
   display: block;
   background: url(../img/deco/obj_popupdots.svg) no-repeat;
@@ -1343,6 +1343,11 @@ https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
 }
 
 .popup__main-title dd {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding-right: 10px;
+  background: var(--color3);
   margin-top: 2%;
   font-family: var(--font-family-title);
   color: var(--color2);
@@ -1409,7 +1414,6 @@ https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
 
 .popup-info__item.des {
   grid-area: des;
-  word-break: keep-all;
 }
 
 .popup-info__item.link {
@@ -1684,11 +1688,11 @@ https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
     }
     .popup__main-title {
       --font-size-dt: 2rem;
-      --font-size-dd: 4rem;
+      --font-size-dd: 3.5rem;
       position: relative;
     }
 
-    .popup__main-title::after {
+    .popup__main-title::before {
       width: calc(270px * 0.6);
       height: calc(60px * 0.6);
       background-size: contain;
@@ -1706,8 +1710,15 @@ https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
     .popup-info__item p, .popup-info__item p a {
       font-size: clamp(1.3rem, 1.4rem, 1.5rem);
     }
+    .popup-info__item.link p a {
+      word-break: break-all;
+    }
+    .popup-info__item p span {
+      font-size: 1.3rem;
+      padding: 0.3em 0.8em;
+    }
     .info__link-btn a {
-      font-size: clamp(1.2rem, 1.3rem, 1.4rem);
+      font-size: 1.5rem;
     }
     
     
@@ -1723,7 +1734,6 @@ https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
       --item-border-radius: 0;
     }
     
-    
     .popup__func-item::after {
       display: none;
     }  
@@ -1732,7 +1742,6 @@ https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
       padding: 2em 1.5em 1em 1.5em;
     }
     .popup-item__att {
-      display: grid;
       grid-template-columns: repeat(1, 1fr);
       grid-gap: 1em;
       grid-template-areas: "att1" "att2" "att3";
@@ -1741,13 +1750,13 @@ https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
     
     .popup-item__title dt {
       font-size: 1.6rem;
-      line-height: 1.2;
+      line-height: 1.3;
     }  
 
     .popup-item__title dd {
       margin-top: 5px;
       line-height: 1.3rem;
-      line-height: 1.2;
+      line-height: 1.3;
     }
     
     .popup-att__item {
@@ -1769,7 +1778,7 @@ https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
       width: 300%;
       height: 100vh;
       object-fit: cover;
-      vertical-align: text-bottom;
+      vertical-align: top;
       object-position: left;
     }
 

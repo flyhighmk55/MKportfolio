@@ -131,7 +131,7 @@ $('#project-popup').on('click', function (e) {
   if($('.func__enlarged').has(e.target).length == 1) {
     
     $('.func__enlarged').removeClass('on').empty();
-    $('.code.on').removeClass('on').addClass('popup-att__item');
+    $('.code.on').removeClass('on').addClass('popup-att__item').animate({'scrollLeft':0},0);
     $('#project-popup, .project-popup__cont').finish();
     $('#project-popup').css({'overflow-y': 'visible'});
   }
