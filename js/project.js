@@ -75,7 +75,7 @@ for(var i = 0; i <= popup_l; i++){
   var popup_func3_des = popup_managing.find('.func3 .des').html();
   var popup_func3_attach = popup_managing.find('.func3 .attach').html();
   popup_cont.find('.popup__func').append(
-    '<dl class="popup__func-title s-tit2" data-aos="fade-up"><dt>Function</dt><dd>I want to show you my code designs!</dd></dl><div class="popup__func-item s-itembox-outer" data-aos="fade-left"><div class="popup__func-item-inner s-itembox-inner"><dl class="popup-item__title">'+ popup_func1_des +'</dl><div class="popup-item__att">'+ popup_func1_attach +'</div></div></div><div class="popup__func-item s-itembox-outer" data-aos="fade-right"><div class="popup__func-item-inner s-itembox-inner"><dl class="popup-item__title">'+ popup_func2_des +'</dl><div class="popup-item__att">'+ popup_func2_attach +'</div></div></div><div class="popup__func-item s-itembox-outer" data-aos="fade-left"><div class="popup__func-item-inner s-itembox-inner"><dl class="popup-item__title">'+ popup_func3_des +'</dl><div class="popup-item__att">'+ popup_func3_attach +'</div></div></div>'
+    '<dl class="popup__func-title s-tit2"><dt>Function</dt><dd>I want to show you my code designs!</dd></dl><div class="popup__func-item s-itembox-outer"><div class="popup__func-item-inner s-itembox-inner"><dl class="popup-item__title">'+ popup_func1_des +'</dl><div class="popup-item__att">'+ popup_func1_attach +'</div></div></div><div class="popup__func-item s-itembox-outer"><div class="popup__func-item-inner s-itembox-inner"><dl class="popup-item__title">'+ popup_func2_des +'</dl><div class="popup-item__att">'+ popup_func2_attach +'</div></div></div><div class="popup__func-item s-itembox-outer"><div class="popup__func-item-inner s-itembox-inner"><dl class="popup-item__title">'+ popup_func3_des +'</dl><div class="popup-item__att">'+ popup_func3_attach +'</div></div></div>'
   );
   
   
@@ -96,13 +96,6 @@ for(var i = 0; i <= popup_l; i++){
 
 
 
-
-
-//팝업창에서 스크롤이 발생되면 AOS 스크롤 기준점을 팝업창으로 바꾸고, 반복 기능을 활성화 해라
-$('#project-popup').scroll(function(){
-    AOS.refreshHard();
-    AOS.init({once: false,});
-}); 
 
 
 
@@ -163,6 +156,7 @@ $('#project-popup').on('click', function (e) {
 $('.popup-att__item.code').click(function(){
   $('.popup-att__item.code').removeClass('on');
   $('.func__enlarged').empty();
+  $('html, body').css({'overflow-y': 'hidden'});
   
   var clone = $(this).clone();
   $('.func__enlarged').addClass('on').append(clone);
