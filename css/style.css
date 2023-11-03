@@ -1066,7 +1066,6 @@ body {
   min-width: 200px;
   transition: 0.3s;
 }
-
 @media (any-hover:hover) and (any-pointer:fine) {
   .project__item:hover {
     box-shadow: 3px 3px 30px var(--color2);
@@ -1105,7 +1104,8 @@ body {
   width: 100%;
 }
 .project__item-des dt {
-  font-size: clamp(1.6rem, 1.2vw, 2.4rem);
+  font-size: clamp(1.6rem, 1.3vw, 2rem);
+  line-height: 1.4;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -1119,7 +1119,7 @@ body {
 
 .project__item-des dd {
   font-family: var(--font-family-main);
-  margin: 4% 0;
+  margin: 2% 0 4%;
   color: #aaa;
   font-size: 1.4rem;
 }
@@ -1255,6 +1255,7 @@ body {
 .poject-popup__frame {
   background: linear-gradient(180deg, #EFF2F7 50%, hsl(218, 100%, 80%) 100%);
   box-shadow: var(--box-shadow-long);
+  overflow: hidden;
 }
 .project-popup-close {
   display: none;
@@ -1322,13 +1323,13 @@ body {
   margin: 30px 0 50px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: auto;
   grid-template-areas: "des skill" "link role" "link cate";
-  grid-gap: 5%;
+  grid-gap: 1.3em;
 }
 
 .popup-info__item {
-  margin-bottom: 15px;
+
 }
 .popup-info__item h3 {
   font-style: 2rem;
@@ -1338,11 +1339,11 @@ body {
 } 
 .popup-info__item p {
   font-family: var(--font-family-btn);
-  margin-top: 6px;
+  margin-top: 3px;
 }
 .popup-info__item p span {
   display: inline-block;
-  margin-right: 5px;
+  margin: 5px 0 2px 0;
   border-radius: 5px;
   padding: 0.5em 1em;
   background: #5F7AA8;
@@ -1455,7 +1456,7 @@ body {
 .popup__func-item-inner {
   box-shadow: inset 3px 3px 20px #A5B3C9;
   background-color: white;
-  padding: 3em;
+  padding: 3em 3em 1em 3em;
 }
 .popup__func-item:nth-of-type(2) .popup__func-item-inner {
   box-shadow: inset -3px 3px 20px #A5B3C9;  
@@ -1463,21 +1464,75 @@ body {
 .popup-item__title dt {
   font-family: var(--font-family-title);
   font-weight: bold;
+  font-size: clamp(1.7rem, 1.5vw, 2rem);
 }
 .popup-item__title dd {
   margin-top: 10px;
+  line-height: 1.4;
 }
 .popup-item__att {
   margin-top: 20px;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 2em;
+  grid-template-areas: "att1 att2" "att3 att3";
+}
+.popup-att__item:nth-child(1) {
+  grid-area: att1;
+}
+.popup-att__item:nth-child(2) {
+  grid-area: att2;
+}
+.popup-att__item:nth-child(3) {
+  grid-area: att3;
 }
 .popup-att__item {
-  width: 48.5%;
+  max-width: 100%;
+  margin-bottom: 2em;
   box-shadow: var(--box-shadow-short);
   border-radius: 20px;
   object-fit: cover;
+  position: relative;
+}
+/*
+@media (any-hover:hover) and (any-pointer:fine) {
+  .popup-att__item:hover {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transform: scale(2);
+  }
+}
+*/
+
+.popup-att__item.code {
+  cursor: pointer;
+}
+@media (any-hover:hover) and (any-pointer:fine) {
+  .code:hover {
+    filter: brightness(1.2);
+  }
+}
+.func__enlarged {
+  width: 80%;
+  height: 50vw;
+  position: absolute;
+  cursor: pointer;
+  z-index: 100;
+  left: 10%;
+  display: none;
+}
+.func__enlarged.on {
+  display: block;
+}
+.code.on {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  max-height: none;
 }
 
 .popup__review {
@@ -1524,8 +1579,66 @@ body {
       filter: brightness(0.9);
     }
   }
+  
+  .popup__func-item {
+    width: 75%;
+  }
+  .popup__func-item-inner {
+    padding: 3em;
+  }
+  
+  .popup-item__att {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1em;
+    grid-template-areas: "att1" "att2" "att3";
+  }
+  .popup-att__item {
+    margin-bottom: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 200px;
+  }
+  .func__enlarged {
+    width: 90%;
+    height: 70vw;
+    left: 5%;
+  }
+  .code.on {
+    object-fit: fill;
+  }
   @media (max-width:767px) {
     /* 스마트폰 ****** */
+    
+    .popup__func-item {
+    width: 100%;
+  }
+  .popup__func-item-inner {
+    padding: 3em;
+  }
+  
+  .popup-item__att {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1em;
+    grid-template-areas: "att1" "att2" "att3";
+  }
+  .popup-att__item {
+    margin-bottom: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 200px;
+  }
+  .func__enlarged {
+    width: 100%;
+    height: 40vh;
+    left: 0;
+    overflow-x: sscroll;
+  }
+  .code.on {
+    object-fit: cover;
+  }  
+    
   }
 }
 
@@ -1589,7 +1702,11 @@ body {
 
 
 
-
+.test {
+  
+  flex-direction: column-reverse;
+  flex-wrap: 
+}
 
 
 

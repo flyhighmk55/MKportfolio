@@ -25,68 +25,13 @@ $('.poject-popup__frame').append(popup_prev);
 
 
 
-//팝업창에서 스크롤이 발생되면 AOS 스크롤 기준점을 팝업창으로 바꾸고, 반복 기능을 활성화 해라
-$('#project-popup').scroll(function(){
-    AOS.refresh();
-    AOS.init({once: false,});
-}); 
-
-
-
-
-
-//프로젝트 아이템이 클릭되면 팝업창을 활성화하라
-$('.project__item').click(function(){
-  //html의 스크롤을 멈추고
-  $('html').css('overflow-y', 'hidden');
-  
-  
-  //해당 내용을 담은 팝업창을 보이게 하라
-  var i = $(this).index();  
-  console.log(i);
-  $('#project-popup').addClass('on');
-  $('.project-popup__cont').eq(i).addClass('on');
-  
-  
-  //팝업창의 위치를 윈도우의 가운데에 놓아라
-  var ww = $(window).width();
-  var wh = $(window).height();
-  var pw = $('#project-popup').width();
-  var ph = $('#project-popup').height();
-  $('#project-popup').css({'top': (wh/2) - (ph/2) + ($(window).scrollTop()), 'left':(ww/2) - (pw/2) + ($(window).scrollLeft())});
-});
-
-
-//팝업창 밖(X버튼 포함, '.poject-popup__frame'밖)을 클릭하면 팝업창이 사라지게 하라
-$('#project-popup').on('click', function (e) {
-  if ($('.poject-popup__frame').has(e.target).length == 0) { 
-    //팝업창을 안보이게 하고
-    $('#project-popup, .project-popup__cont').removeClass('on');
-    
-    //html의 스크롤을 다시 활성화 하고
-    $('html').css('overflow-y', 'visible');
-    
-    //팝업창의 스크롤 위치를 맨위로 옮겨놔라.
-    $("#project-popup").animate({'scrollTop':0},0);
-  }
-});
-
-
-
-
-
-//
-
-
-
-
 
 
 
 
 //#project-popup 자동완성
-var project_l = $('.project-popup__cont').length;
-for(var i = 0; i <= project_l; i++){
+var popup_l = $('.project-popup__cont').length;
+for(var i = 0; i <= popup_l; i++){
   //팝업 아이템 순서
   var popup_cont = $('.project-popup__cont').eq(i);
   //입력값
@@ -108,19 +53,18 @@ for(var i = 0; i <= project_l; i++){
   
   //[class="popup__main-info"]
   var popup_info_des = popup_managing.find('.item-des').text();
-  var popup_info_link = popup_managing.find('.item-link').html();
+  var popup_info_link = popup_managing.find('.item-link .link').attr('href');
+  var popup_info_github = popup_managing.find('.item-link .github').attr('href');
+  var popup_info_original = popup_managing.find('.item-link .original').attr('href');
   var popup_info_skill = popup_managing.find('.item-skill').html();
   var popup_info_role = popup_managing.find('.item-role').html();
   var popup_info_cate = popup_managing.find('.item-cate').html();
   popup_cont.find('.popup__main-info').append(
-    '<div class="popup-info__item des"><h3>DESCRIPTION</h3><p>' + popup_info_des + '</p></div><div class="popup-info__item link"><h3>LINK</h3><p>' + popup_info_link + '</p><div class="info__link-btn"><a href="https://github.com/flyhighmk55/demo-YD" target="_blank" class="s-btn1">Github</a><a href="https://www.yd21.go.kr/" target="_blank" class="s-btn1">Original</a></div></div><div class="popup-info__item skill"><h3>SKILLS</h3><p>' + popup_info_skill + '</p></div><div class="popup-info__item role"><h3>ROLE / CONTRIBUTION</h3><p>' + popup_info_role + '</p></div><div class="popup-info__item cate"><h3>CATEGORY</h3><p>' + popup_info_cate + '</p></div>'
+    '<div class="popup-info__item des"><h3>DESCRIPTION</h3><p>' + popup_info_des + '</p></div><div class="popup-info__item link"><h3>LINK</h3><p><a href="' + popup_info_link + '" target="_blank"></p><div class="info__link-btn"><a href="'+ popup_info_github +'" target="_blank" class="s-btn1">Github</a><a href="'+ popup_info_original +'" target="_blank" class="s-btn1">Original</a></div></div><div class="popup-info__item skill"><h3>SKILLS</h3><p>' + popup_info_skill + '</p></div><div class="popup-info__item role"><h3>ROLE / CONTRIBUTION</h3><p>' + popup_info_role + '</p></div><div class="popup-info__item cate"><h3>CATEGORY</h3><p>' + popup_info_cate + '</p></div>'
   );
   //[class="link"] '.popup-info__item.link p a' herf 입력 시 텍스트 자동완성
   var projec_link = popup_cont.find('.popup-info__item.link > p > a').attr('href');
   popup_cont.find('.popup-info__item.link p a').text(projec_link);
-  
-  
-  
   
   
   //[class="popup__func"] 자동완성
@@ -131,7 +75,7 @@ for(var i = 0; i <= project_l; i++){
   var popup_func3_des = popup_managing.find('.func3 .des').html();
   var popup_func3_attach = popup_managing.find('.func3 .attach').html();
   popup_cont.find('.popup__func').append(
-    '<dl class="popup__func-title s-tit2" data-aos="fade-up"><dt>Function</dt><dd>I want to show you my code designs!</dd></dl><div class="popup__func-item s-itembox-outer" data-aos="fade-left"><div class="popup__func-item-inner s-itembox-inner"><dl class="popup-item__title">'+ popup_func1_des +'</dl><div class="popup-item__att fl">'+ popup_func1_attach +'</div></div></div><div class="popup__func-item s-itembox-outer" data-aos="fade-right"><div class="popup__func-item-inner s-itembox-inner"><dl class="popup-item__title">'+ popup_func2_des +'</dl><div class="popup-item__att fl">'+ popup_func2_attach +'</div></div></div><div class="popup__func-item s-itembox-outer" data-aos="fade-left"><div class="popup__func-item-inner s-itembox-inner"><dl class="popup-item__title">'+ popup_func3_des +'</dl><div class="popup-item__att fl">'+ popup_func3_attach +'</div></div></div>'
+    '<dl class="popup__func-title s-tit2" data-aos="fade-up"><dt>Function</dt><dd>I want to show you my code designs!</dd></dl><div class="popup__func-item s-itembox-outer" data-aos="fade-left"><div class="popup__func-item-inner s-itembox-inner"><dl class="popup-item__title">'+ popup_func1_des +'</dl><div class="popup-item__att">'+ popup_func1_attach +'</div></div></div><div class="popup__func-item s-itembox-outer" data-aos="fade-right"><div class="popup__func-item-inner s-itembox-inner"><dl class="popup-item__title">'+ popup_func2_des +'</dl><div class="popup-item__att">'+ popup_func2_attach +'</div></div></div><div class="popup__func-item s-itembox-outer" data-aos="fade-left"><div class="popup__func-item-inner s-itembox-inner"><dl class="popup-item__title">'+ popup_func3_des +'</dl><div class="popup-item__att">'+ popup_func3_attach +'</div></div></div>'
   );
   
   
@@ -140,7 +84,6 @@ for(var i = 0; i <= project_l; i++){
   popup_cont.find('.popup__review').prepend(
     '<div class="popup__review-inner"><dl class="popup__review-title s-tit2"><dt>Review</dt><dd>I learned a lot from this project!</dd></dl><p class="popup__review-txt">'+ popup_review +'</p></div>'
   );
-  
   
   
   
@@ -154,6 +97,85 @@ for(var i = 0; i <= project_l; i++){
 
 
 
+
+//팝업창에서 스크롤이 발생되면 AOS 스크롤 기준점을 팝업창으로 바꾸고, 반복 기능을 활성화 해라
+$('#project-popup').scroll(function(){
+    AOS.refreshHard();
+    AOS.init({once: false,});
+}); 
+
+
+
+
+
+
+
+
+
+//프로젝트 아이템이 클릭되면 팝업창을 활성화하라
+$('.project__item').click(function(){
+  //html의 스크롤을 멈추고
+  $('html').css('overflow-y', 'hidden');
+  
+  //해당 내용을 담은 팝업창을 보이게 하라
+  var i = $(this).index();  
+  console.log(i);
+  $('#project-popup').addClass('on');
+  $('.project-popup__cont').eq(i).addClass('on');
+  
+  //팝업창의 위치를 윈도우의 가운데에 놓아라
+  var ww = $(window).width();
+  var wh = $(window).height();
+  var pw = $('#project-popup').width();
+  var ph = $('#project-popup').height();
+  $('#project-popup').css({'top': (wh/2) - (ph/2) + ($(window).scrollTop()), 'left':(ww/2) - (pw/2) + ($(window).scrollLeft())});
+});
+
+
+//팝업창 닫는 함수
+$('#project-popup').on('click', function (e) {
+  //.func__enlarged
+  if($('.func__enlarged').has(e.target).length == 1) {
+    
+    $('.func__enlarged').removeClass('on').empty();
+    $('.code.on').removeClass('on').addClass('popup-att__item');
+    $('#project-popup, .project-popup__cont').finish();
+  }
+  
+  //#project-popup
+  else if ($('.poject-popup__frame').has(e.target).length == 0) { 
+    //팝업창을 안보이게 하고
+    $('#project-popup, .project-popup__cont').removeClass('on');
+    
+    //html의 스크롤을 다시 활성화 하고
+    $('html').css('overflow-y', 'visible');
+    
+    //팝업창의 스크롤 위치를 맨위로 옮겨놔라.
+    $("#project-popup").animate({'scrollTop':0},0);
+  }
+});
+
+
+
+
+
+
+$('.popup-att__item.code').click(function(){
+  $('.popup-att__item.code').removeClass('on');
+  $('.func__enlarged').empty();
+  
+  var clone = $(this).clone();
+  $('.func__enlarged').addClass('on').append(clone);
+  
+  $('.func__enlarged .popup-att__item.code').addClass('on').removeClass('popup-att__item');
+  
+    var ww = $(window).width();
+  var wh = $(window).height();
+  var fw = $('.func__enlarged').width();
+  var fh = $('.func__enlarged').height();
+  $('.func__enlarged').css({'top': (wh/2) - (fh/2) + ($('#project-popup').scrollTop())});
+
+});
 
 
 
