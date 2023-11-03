@@ -133,6 +133,7 @@ $('#project-popup').on('click', function (e) {
     $('.func__enlarged').removeClass('on').empty();
     $('.code.on').removeClass('on').addClass('popup-att__item');
     $('#project-popup, .project-popup__cont').finish();
+    $('#project-popup').css({'overflow-y': 'visible'});
   }
   
   //#project-popup
@@ -141,7 +142,7 @@ $('#project-popup').on('click', function (e) {
     $('#project-popup, .project-popup__cont').removeClass('on');
     
     //html의 스크롤을 다시 활성화 하고
-    $('html').css('overflow-y', 'visible');
+    $('html').css('overflow-y', 'scroll');
     
     //팝업창의 스크롤 위치를 맨위로 옮겨놔라.
     $("#project-popup").animate({'scrollTop':0},0);
@@ -156,7 +157,7 @@ $('#project-popup').on('click', function (e) {
 $('.popup-att__item.code').click(function(){
   $('.popup-att__item.code').removeClass('on');
   $('.func__enlarged').empty();
-  $('html, body').css({'overflow-y': 'hidden'});
+  $('#project-popup').css({'overflow-y': 'hidden'});
   
   var clone = $(this).clone();
   $('.func__enlarged').addClass('on').append(clone);
