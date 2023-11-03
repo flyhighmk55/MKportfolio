@@ -1277,11 +1277,10 @@ https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
   height: 0%;
   overflow-y: scroll;
   opacity: 0;
-
 }
 
 #project-popup.on {
-  height: 100vw;
+  height: 100vh;
   overflow-x: visible;
   opacity: 1;
 }
@@ -1564,19 +1563,6 @@ https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
   position: relative;
 }
 
-/*
-@media (any-hover:hover) and (any-pointer:fine) {
-  .popup-att__item:hover {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    left: 0;
-    top: 0;
-    transform: scale(2);
-  }
-}
-*/
-
 .popup-att__item.code {
   cursor: pointer;
 }
@@ -1694,15 +1680,56 @@ https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
 
   @media (max-width:767px) {
     /* 스마트폰 ****** */
+    .popup__main {
+      padding-top: 8%;
+    }
+    .popup__main-title {
+      --font-size-dt: 2rem;
+      --font-size-dd: 4rem;
+      position: relative;
+    }
 
+    .popup__main-title::after {
+      width: calc(270px * 0.6);
+      height: calc(60px * 0.6);
+      background-size: contain;
+    }
+    
+    .popup__main-info {
+      margin: 30px 0 50px;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: auto;
+      grid-template-areas: "des" "link" "skill" "role" "cate";
+      grid-gap: 1.3em;
+    }  
+    .popup-info__item h3 {
+      font-size: clamp(1.5rem, 3vw, 1.8rem);
+    }
+    .popup-info__item p {
+      font-size: clamp(1.4rem, 1.8vw, 1.5rem);
+    }
+    .info__link-btn a {
+      font-size: 1.5rem;
+    }
+    
+    
+    .popup__func-title {
+  margin-top: 10%;
+}
+    
     .popup__func-item {
+  --item-border-radius: 0;
       width: 100%;
     }
-
+    
+    .popup__func-item::after {
+      display: none;
+    }  
+    
     .popup__func-item-inner {
-      padding: 3em;
+      padding: 2em;
     }
-
     .popup-item__att {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -1710,6 +1737,18 @@ https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
       grid-template-areas: "att1" "att2" "att3";
     }
 
+    
+    .popup-item__title dt {
+  font-size: 1.6rem;
+        line-height: 1.2;
+}
+
+.popup-item__title dd {
+  margin-top: 5px;
+  line-height: 1.3rem;
+    line-height: 1.2;
+}
+    
     .popup-att__item {
       margin-bottom: 0;
       width: 100%;
