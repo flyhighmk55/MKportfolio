@@ -76,7 +76,7 @@ for (var i = 0; i <= popup_l; i++) {
 
 
   //[class="popup__review"] 자동완성
-  var popup_review = popup_managing.find('.review').text();
+  var popup_review = popup_managing.find('.review').html();
   popup_cont.find('.popup__review').prepend(
     '<div class="popup__review-inner"><dl class="popup__review-title s-tit2"><dt>Review</dt><dd>I learned a lot from this project!</dd></dl><p class="popup__review-txt">' + popup_review + '</p></div>'
   );
