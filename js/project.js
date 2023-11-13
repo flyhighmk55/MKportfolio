@@ -2,7 +2,10 @@
 
 
 //[style] GNB에 project창이 활성화됨을 표시
-$('header .nav__btn').eq(1).addClass('on');
+if(ww >= 768){
+  $('header .nav__btn').eq(1).addClass('on');
+}
+
 
 //[style] section 최소 높이 확보
 var hf_h = $('header').height() + $('footer').height() + 50;
@@ -13,19 +16,12 @@ $('#project-main').css({'min-height': 'calc(100vh - '+ hf_h +'px)'});
 
 
 
-
 //[style] .project__item, .project-popup__cont 역순(최신순)으로 배열
 var project_prev = $('.project__item').prevAll();
 $('.project-main__cont').append(project_prev);
 
 var popup_prev = $('.project-popup__cont').prevAll();
 $('.poject-popup__frame').append(popup_prev);
-
-
-
-
-
-
 
 
 
@@ -105,14 +101,14 @@ for(var i = 0; i <= popup_l; i++){
 
 
 
-//프로젝트 아이템이 클릭되면 팝업창을 활성화하라
+//프로젝트 아이템이 클릭되면 프로젝트 상세를 활성화하라
 $('.project__item').click(function(){
   //html의 스크롤을 멈추고
   $('html').css('overflow-y', 'hidden');
   
   //해당 내용을 담은 팝업창을 보이게 하라
   var i = $(this).index();  
-  console.log(i);
+  //console.log(i);
   $('#project-popup').addClass('on');
   $('.project-popup__cont').eq(i).addClass('on');
   
@@ -125,18 +121,50 @@ $('.project__item').click(function(){
 });
 
 
-//팝업창 닫는 함수
+
+
+
+
+$('.popup-att__item.code').click(function(){
+  //모든 코드 이미지 초기화
+  $('.popup-att__item.code').removeClass('on');
+  //확대 이미지 엘리먼트를 비우고
+  $('.func__enlarged').empty();
+  //윈도우 스크롤을 금지하고
+  $('#project-popup').css({'overflow-y': 'hidden'});
+  //클릭된 이미지 엘리먼트를 복사하여
+  var clone = $(this).clone();
+  //확대이미지 엘리먼트 안에 넣어라
+  $('.func__enlarged').addClass('on').append(clone);
+  //이 엘리먼트를 확대하고, 원본 이미지 클릭시 창이 닫히는 것을 방지해라
+  $('.func__enlarged .popup-att__item.code').addClass('on').removeClass('popup-att__item');
+  
+  //확대이미지를 화면 가운데에 위치 시켜라
+  var ww = $(window).width();
+  var wh = $(window).height();
+  var fw = $('.func__enlarged').width();
+  var fh = $('.func__enlarged').height();
+  $('.func__enlarged').css({'top': (wh/2) - (fh/2) + ($('#project-popup').scrollTop())});
+});
+
+
+
+
+
+//확대이미지&프로젝트 상세 팝업창을 닫는 함수
 $('#project-popup').on('click', function (e) {
-  //.func__enlarged
+  //.func__enlarged 확대이미지 닫기
   if($('.func__enlarged').has(e.target).length == 1) {
-    
+    //확대 이미지 엘리먼트를 비우고
     $('.func__enlarged').removeClass('on').empty();
+    //확대 이미지를 원래 사이즈로 바꾸고, 이미지 클릭방지? 없애기, 스크롤 원위치
     $('.code.on').removeClass('on').addClass('popup-att__item').animate({'scrollLeft':0},0);
-    $('#project-popup, .project-popup__cont').finish();
+    //이건뭐지?? $('#project-popup, .project-popup__cont').finish();
+    //스크롤 재활성화
     $('#project-popup').css({'overflow-y': 'visible'});
   }
   
-  //#project-popup
+  //#project-popup 프로젝트 상세 닫기
   else if ($('.poject-popup__frame').has(e.target).length == 0) { 
     //팝업창을 안보이게 하고
     $('#project-popup, .project-popup__cont').removeClass('on');
@@ -146,31 +174,17 @@ $('#project-popup').on('click', function (e) {
     
     //팝업창의 스크롤 위치를 맨위로 옮겨놔라.
     $("#project-popup").animate({'scrollTop':0},0);
+    
+    //확대이미지가 열려 있다면 함께 닫기
+    $('.func__enlarged').removeClass('on').empty();
+    $('.code.on').removeClass('on').addClass('popup-att__item').animate({'scrollLeft':0},0);
+    $('#project-popup, .project-popup__cont').finish();
+    $('#project-popup').css({'overflow-y': 'visible'});  
   }
 });
 
 
 
-
-
-
-$('.popup-att__item.code').click(function(){
-  $('.popup-att__item.code').removeClass('on');
-  $('.func__enlarged').empty();
-  $('#project-popup').css({'overflow-y': 'hidden'});
-  
-  var clone = $(this).clone();
-  $('.func__enlarged').addClass('on').append(clone);
-  
-  $('.func__enlarged .popup-att__item.code').addClass('on').removeClass('popup-att__item');
-  
-    var ww = $(window).width();
-  var wh = $(window).height();
-  var fw = $('.func__enlarged').width();
-  var fh = $('.func__enlarged').height();
-  $('.func__enlarged').css({'top': (wh/2) - (fh/2) + ($('#project-popup').scrollTop())});
-
-});
 
 
 
