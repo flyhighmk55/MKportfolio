@@ -13,11 +13,15 @@ AOS.init({
 // 반응형 너비 인식 재측정---------------------------------
 
 var ww = $(window).outerWidth();
-$(window).resize(function () {
+function windowresize (){
+  $(window).resize(function () {
   ww = $(window).outerWidth();
   //console.log(ww);
   // location.reload();
-});
+  });
+}
+windowresize();
+
 
 
 /* 연속 스타일&애니메이션 반응형 구간------------------------
