@@ -1,0 +1,340 @@
+/* 리셋+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+@media (min-width:0) {
+
+  /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+
+  body {
+    line-height: 1;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+  }
+
+  blockquote,
+  q {
+    quotes: none;
+  }
+
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+
+
+  /*리셋 추가--------------------------------------------------------*/
+
+  * {
+    margin: 0;
+    padding: 0;
+    outline: none;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  img {
+    object-fit: scale-down;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    overflow: visible;
+    cursor: pointer
+  }
+
+
+}
+
+
+/* 폰트+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+@media (min-width:0) {
+  /* font-family: 'Roboto', sans-serif; */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+}
+
+/* 1320 790 430 */
+
+/* 루트 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+@media (min-width:0) {
+  :root {
+    /*폰트 스타일-------------------------*/
+    --root-font-size: 62.5%;
+    --font-family-main: 'Roboto', sans-serif;
+
+    /*박스 스타일-------------------------*/
+    --header-height: 56px;
+    --wrap-max-width: 4500px;
+
+    /*icon 스타일-------------------------*/
+    --icon-width: 24px;
+    --icon-height: 24px;
+    
+    /*컬러 모음-------------------------*/
+    --icon-hover-color: #ddd;
+    --icon-selected-color: #f1f1f1;
+    --info1-color: #676767;
+    --border-color: #ccc;
+    --side-nav-color: #0f0f0f;
+  }
+  
+}
+
+
+/* 공통 추가 스타일 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+@media (min-width:0) {
+  
+  
+  .s-icon-container1{
+    height: calc(var(--icon-height) + 16px);
+    width: calc(var(--icon-width) + 16px);
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media (any-hover:hover) and (any-pointer:fine) {
+    .s-ir1:hover {
+      background: var(--icon-hover-color);
+    }
+  }
+  
+  
+  .s-icon-container2 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon-shaper {
+    height: var(--icon-height);
+    width: var(--icon-width);
+    border-radius: 100%;
+    overflow: hidden;
+  }
+  
+  .s-info1::after {
+    content: '검색';
+    display: block;
+    border-radius: 5px;
+    background: var(--info1-color);
+    color: #f1f1f1;
+    font-size: 12px;
+    position: absolute;
+    padding: 8px 10px;
+    bottom: -45px;
+    left: 8px;
+    opacity: 0;
+    z-index: -1;
+   }
+  @media (any-hover:hover) and (any-pointer:fine) {
+    .s-info1:hover::after {
+      opacity: 1;
+      z-index: 0;
+      transition: 0.5s;
+    }
+  }
+  
+  
+  
+  
+  
+  
+}
+
+
+/* 공통 기본 스타일 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+@media (min-width:0) {
+
+  html {
+    font-size: var(--root-font-size);
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  body {
+    color: var(--color-b);
+    font-family: var(--font-family-main);
+    font-size: 1.6rem;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .s-wrap {
+    width: var(--wrap-width);
+    max-width: var(--wrap-max-width);
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .s-wrap::after,
+  ul::after {
+    content'';
+    clear: both;
+    display: block;
+  }
+
+  .s-flc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .s-flsb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+
+  .s-blind {
+    position: absolute;
+    left: -9999px;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
