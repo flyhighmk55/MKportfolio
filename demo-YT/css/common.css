@@ -223,10 +223,53 @@
 
 
 /* 공통 추가 스타일 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/*미디어쿼리 구간별 전용 스타일*/
+@media (min-width:0) {
+  .e_eventpoint2 {
+    display: none !important;
+  }
+  @media (max-width:768px) {
+    .e_eventpoint1 {
+      display: none !important;
+    }
+    @media (max-width:480px) {
+      
+    }
+  }
+}
+
+
+
 @media (min-width:0) {
   
   
-  .s-icon-container1{
+  /* 스크롤바 스타일*/
+  body::-webkit-scrollbar, #gnb::-webkit-scrollbar {
+    width: 12px;
+  }
+  body::-webkit-scrollbar-thumb, #gnb::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 10px;
+    height: 5%;
+    border: 2px solid #fff;
+  }
+  #gnb::-webkit-scrollbar-thumb {
+    display: none;
+  }
+  @media (any-hover:hover) and (any-pointer:fine) {
+    body::-webkit-scrollbar-thumb:hover {
+      background: #999;
+    } 
+    #gnb:hover::-webkit-scrollbar-thumb {
+      background: #999;
+      display: block;
+    } 
+  }
+  
+  
+  
+  .mh_icon-container {
     height: calc(var(--icon-height) + 16px);
     width: calc(var(--icon-width) + 16px);
     border-radius: 100%;
@@ -237,25 +280,20 @@
   }
   
   @media (any-hover:hover) and (any-pointer:fine) {
-    .s-ir1:hover {
+    .hover-icon1:hover {
       background: var(--icon-hover-color);
     }
   }
   
   
-  .s-icon-container2 {
-    display: flex;
-    align-items: center;
-  }
-  
-  .icon-shaper {
+  .icon-shaper, .gnb__icon, .gnb__icon-w, .gnb__icon-b {
     height: var(--icon-height);
     width: var(--icon-width);
     border-radius: 100%;
     overflow: hidden;
   }
   
-  .s-info1::after {
+  .hover-info1::after {
     content: '검색';
     display: block;
     border-radius: 5px;
@@ -270,7 +308,7 @@
     z-index: -1;
    }
   @media (any-hover:hover) and (any-pointer:fine) {
-    .s-info1:hover::after {
+    .hover-info1:hover::after {
       opacity: 1;
       z-index: 0;
       transition: 0.5s;

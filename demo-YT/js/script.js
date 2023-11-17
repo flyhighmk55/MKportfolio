@@ -58,38 +58,64 @@ $(window).resize(function () {
 });
 
 
-$('.sn_item').click(function(){
+
+
+
+//.gnb__item 클릭 이벤트
+$('.gnb__item').click(function(){
+  //.gnb__item의 아이콘 색, 배경색 초기화
+  $('.gnb__icon').removeClass('e_click');
+  $('.s_2color-icons .gnb__icon-w').removeClass('e_hide');
+  $('.s_2color-icons .gnb__icon-b').addClass('e_hide');
   
+  //.gnb__item의 아이콘 색, 배경색 변경
+  if($(this).has('.s_2color-icons').length === 1){
+    // 아이콘 색이 두가지인 경우
+    $(this).find('.gnb__icon-w').addClass('e_hide').siblings().removeClass('e_hide');
+  } else {
+    //아이콘 색이 한가지인 경우
+    $(this).find('.gnb__icon').addClass('e_click');
+  };
   
-  
-  
-//  
-//  $('.icon-shaper.more').show();
-//  $('.icon-shaper.brief').hide();
-  $(this).find('.icon-shaper.more, span.more, .icon-shaper.brief, span.brief').toggle();
-  
-  
-  
-  
-  $('.sn_item').removeClass('on');
-  $(this).toggleClass('on');
+  //.gnb__item의 아이콘 이름 폰트웨이트 변경
+  $('.gnb__item-name').removeClass('e_click');
+  $(this).find('.gnb__item-name').addClass('e_click');
 });
 
 
 
 
+//#gnb__user .s_list-brief, 토글 아이템 감추기
+var gnb__user_l = $('#gnb__user .gnb__categoty-inner .gnb__item').length;
+for(var n = 0; n <= gnb__user_l; n++){
+  if( n >= 4 ) {
+    $('#gnb__user .gnb__categoty-inner .gnb__item').eq(n).addClass('e_hide');
+    $('#gnb__user .gnb__categoty-inner .gnb__item').eq(n).addClass('e_toggle');
+  } 
+};
+
+//#gnb__subscribe .s_list-brief, 토글 아이템 감추기
+var gnb__subscribe_l = $('#gnb__subscribe .gnb__categoty-inner .gnb__item').length;
+for(var n = 0; n <= gnb__subscribe_l; n++){
+  if( n >= 7 ) {
+    $('#gnb__subscribe .gnb__categoty-inner .gnb__item').eq(n).addClass('e_hide');
+    $('#gnb__subscribe .gnb__categoty-inner .gnb__item').eq(n).addClass('e_toggle');
+  } 
+};
+//#gnb__subscribe .s_list-brief, 토글 아이템 갯수 입력
+var gnb__subscribe_toggle_l = $('#gnb__subscribe .gnb__categoty-inner .gnb__item.e_toggle').length;
+$('#gnb__subscribe .gnb__item-count').text(gnb__subscribe_toggle_l);
 
 
-
-
-
-
-
-
-
-
-
-
+//.s_list-brief 클릭 이벤트
+$('.s_list-brief').click(function(){
+  //아이콘 색, 아이콘 이름 변경
+  $(this).find('.gnb__icon').toggleClass('e_hide');
+  $(this).find('.gnb__item-name').toggleClass('e_hide');
+  
+  //토글 아이템 보이기||감추기
+  $(this).parents('.gnb__categoty').find('.gnb__categoty-inner .gnb__item.e_toggle').toggleClass('e_hide');
+});
 
 
 
