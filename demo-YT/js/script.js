@@ -122,7 +122,10 @@ $('.s_list-brief').click(function(){
 
 
 
+
+//#gnb 분기점별 기본 형태
 function gnb_disply (){ 
+  //블랙스크린 없음
   $('#blackscreen').hide();
   
   if(ww <= 790){
@@ -139,8 +142,7 @@ function gnb_disply (){
   }
 }
 gnb_disply();
-
-
+//윈도우 너비가 바뀌면 #gnb 분기점별 기본 형태로 만들어라
 $(window).resize(function () {
   ww = $(window).outerWidth();
   gnb_disply();
@@ -148,21 +150,21 @@ $(window).resize(function () {
 
 
 
-
+//헤더의 .mh_nav-btn 클릭 이밴트
 $('#master-header .mh_nav-btn').click(function(){
   windowresize();
+  //간략메뉴 형태 on/off
   $('#gnb').toggleClass('e_open');
-  
-  
   if(ww <= 1300){
+    //너비가 1300 이하인 구간에서만 블랙 스크린 작동
     $('#blackscreen').fadeToggle();
-    
+    //#gnb가 왼쪽에서 나타나는 애니메이션
     $('#gnb').animate({'left':-240}, 0).animate({'left':0},300);
-    
+    //간략메뉴가 보이는 상태아면, #gnb 애니메이션 없음
     if($('#gnb').hasClass('e_open') === true){
       $('#gnb').finish();
     }
-    
+    //너비가 790이하인 구간에서는 간략메뉴 안보이게
     if(ww <= 790){
       $('#gnb').toggleClass('e_hide');
     }
@@ -170,22 +172,20 @@ $('#master-header .mh_nav-btn').click(function(){
 });
 
 
-
-
-
-
+//#gnb의 .mh_nav-btn 클릭 이밴트
 $('#gnb .mh_nav-btn').click(function(){
   windowresize();
+  //너비가 1300 이하인 구간에서만 작동
   if(ww <= 1300){
     $('#blackscreen').fadeToggle();
+    //#gnb가 왼쪽으로 사라진 후에
     $('#gnb').animate({'left':0},0).animate({'left':-240}, 300).animate({'left':0},0, function(){
-      
-    $('#gnb').addClass('e_open');
-      
+      //간략메뉴가 보이게 하라
+      $('#gnb').addClass('e_open');
+      //너비가 790이하인 구간에서는 간략메뉴 안보이게 하라
       if(ww <= 790){
         $('#gnb').toggleClass('e_hide');
       }
-
     });
   }
 });
