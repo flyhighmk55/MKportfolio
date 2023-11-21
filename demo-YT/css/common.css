@@ -210,6 +210,8 @@
     /*icon 스타일-------------------------*/
     --icon-width: 24px;
     --icon-height: 24px;
+    --icon-contaner-width: calc(var(--icon-width) + 16px);
+    --icon-contaner-height: calc(var(--icon-height) + 16px);
 
     /*컬러 모음-------------------------*/
     --icon-hover-color: #ddd;

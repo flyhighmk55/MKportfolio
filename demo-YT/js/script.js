@@ -216,104 +216,108 @@ $('#gnb .mh_nav-btn').click(function () {
 
 
 
-
-
-
-
-var item = $('.main__header-item');
+//header-item들의 너비의 합을 구해서 list-inner의 너비에 넣기
 var total_width = 0;
-
-item.each(function () {
-  total_width = total_width + $(this).outerWidth(true);//요소에 마진이 있다면
+$('.main__header-item').each(function () {
+  total_width = total_width + $(this).outerWidth(true);
 });
-console.log(total_width);
-
-
-var item_l = $('.main__header-item').length;
-
 $('.main__header-list-inner').css({ 'width': total_width });
 
 
 
 
 
+
 function header_width() {
+  //list의 너비와 list-inner의 너비를 측정해서
   var list_w = $('.main__header-list').width();
   var inner_w = $('.main__header-list-inner').width();
+  console.log(list_w);
+  console.log(inner_w);
+  console.log(list_w - inner_w);
 
-  if (inner_w >= list_w) {
 
-    $('.main__header-more').addClass('e_show');
 
+  if (inner_w > list_w) {
+    //list의 너비와 list-inner의 너비를 비교해서  list-inner가 더 크면
     var p = $('.main__header-list-inner').position();
+    console.log(p);
 
-    if (p.left = 60) {
-      $('.main__header-more.s_next .icon-container').addClass('e_show');
-    } else if (p.left = (inner_w - list_w)) {
-      $('.main__header-more.s_prev .icon-container').addClass('e_show');
+    if (p.left <= 0) {
+      $('.main__header-list-inner').animate({ 'left': 0 }, 0);
+      // list-inner가 가장 왼쪽에 정렬될 때
+      $('.main__header-more.e_next').addClass('e_show');
+      $('.main__header-more.e_prev').removeClass('e_show');
+    } else if (p.left <= list_w - inner_w) {
+      // list-inner가 가장 오른쪽에 정렬될 때
+      $('.main__header-more.e_prev').addClass('e_show');
+      $('.main__header-more.e_next').removeClass('e_show');
+    } else {
+      // list-inner가 즁간 어딘가에 정렬될 때
+      $('.main__header-more.e_prev, .main__header-more.e_-next').addClass('e_show');
     }
   } else {
-    $('.main__header-more .icon-container').addClass('e_show');
+    //list의 너비와 list-inner의 너비를 비교해서  list-inner가 더 작으면
+    $('.main__header-more.e_prev, .main__header-more.e_next').removeClass('e_show');
   }
 };
 header_width();
-
-
 $(window).resize(function () {
-  ww = $(window).outerWidth();
   header_width();
-
 });
 
 
 
 
-var n = 1;
 
 
 
-$('.main__header-more.s_next').click(function () {
+
+
+// function hidden_list_width() {
+//   var list_w = $('.main__header-list').width();
+//   var inner_w = $('.main__header-list-inner').width();
+//   var hidden_list_width = list_w - inner_w + 20;
+// }
+
+
+
+
+var n = 0;
+
+//다음 버튼 클릭시 
+$('.main__header-more.e_next').click(function () {
   windowresize();
-  var inner_w = $('.main__header-list-inner').width();
+  console.log($('.main__header-list-inner').position());
   var list_w = $('.main__header-list').width();
-
-
-  if (n <= 2) {
-    $('.main__header-list-inner').animate({ 'left': -(((inner_w - list_w) / 3) * n) });
-  } else if (n > 2) {
-    $('.main__header-list-inner').animate({ 'left': -(inner_w - list_w) });
-    n = 2;
-  }
+  var inner_w = $('.main__header-list-inner').width();
+  var hidden_list_width = list_w - inner_w - 1;
   n++;
+
+
+
+  $('.main__header-list-inner').animate({ 'left': hidden_list_width / 2 }, 300);
+  $('.main__header-more.e_prev').addClass('e_show');
+  $('.main__header-more.e_next').removeClass('e_show');
+
+
 });
 
-
-
-
-
-$('.main__header-more.s_prev').click(function () {
+//이전 버튼 클릭시 
+$('.main__header-more.e_prev').click(function () {
   windowresize();
 
-  var inner_w = $('.main__header-list-inner').width();
   var list_w = $('.main__header-list').width();
-
-  n--;
-
-  if (n <= 0) {
-    $('.main__header-list-inner').animate({ 'left': 0 });
-    n = 1;
-  } else if (0 < n <= 2) {
-    $('.main__header-list-inner').animate({
-      'left': (-(inner_w - list_w) / 4) * n
-    });
-  }
+  var inner_w = $('.main__header-list-inner').width();
+  var hidden_list_width = -(list_w - inner_w - 1);
 
 
+
+  $('.main__header-list-inner').animate({ 'left': 0 }, 300);
+  $('.main__header-more.e_prev').removeClass('e_show');
+  $('.main__header-more.e_next').addClass('e_show');
+
+  // console.log(n);
 });
-
-
-
-
-
 
 
