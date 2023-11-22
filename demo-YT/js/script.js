@@ -324,6 +324,7 @@ $('.main__header-more.s_prev').click(function () {
 
 //썸네일 이미지 높이&너비
 var tumbnail_video_h = $('.main__tumbnail-video iframe').height();
+$('.main__tumbnail-img').height(tumbnail_video_h);
 var tumbnail_img_h = $('.main__tumbnail-img').height(tumbnail_video_h);
 var tumbnail_img_w = (16 * tumbnail_img_h) / 9;
 $('.main__tumbnail-img').width(tumbnail_img_w);
