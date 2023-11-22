@@ -236,11 +236,11 @@ function header_width() {
   if (inner_w > list_w) {
     //list의 너비와 list-inner의 너비를 비교해서  list-inner가 더 크면 list-inner가 가장 왼쪽에 정렬
     $('.main__header-list-inner').animate({ 'left': 0 }, 0);
-    $('.main__header-more.e_next').addClass('e_show');
-    $('.main__header-more.e_prev').removeClass('e_show');
+    $('.main__header-more.s_next').addClass('e_show');
+    $('.main__header-more.s_prev').removeClass('e_show');
   } else {
     //list의 너비와 list-inner의 너비를 비교해서  list-inner가 더 작으면
-    $('.main__header-more.e_prev, .main__header-more.e_next').removeClass('e_show');
+    $('.main__header-more.s_prev, .main__header-more.s_next').removeClass('e_show');
   }
 };
 header_width();
@@ -254,7 +254,7 @@ $(window).resize(function () {
 var more_n = 0;
 
 //다음 버튼 클릭시 
-$('.main__header-more.e_next').click(function () {
+$('.main__header-more.s_next').click(function () {
   windowresize();
   // console.log($('.main__header-list-inner').position());
 
@@ -274,22 +274,22 @@ $('.main__header-more.e_next').click(function () {
     } else if (more_n >= 2) {
       // 리스트 오른쪽 끝 정렬, 이전 버튼 활성화
       $('.main__header-list-inner').animate({ 'left': hidden_list_width }, 300);
-      $('.main__header-more.e_prev').addClass('e_show');
-      $('.main__header-more.e_next').removeClass('e_show');
+      $('.main__header-more.s_prev').addClass('e_show');
+      $('.main__header-more.s_next').removeClass('e_show');
       more_n = 2;
     };
   } else if (790 < ww <= 1300) {
     // 리스트 오른쪽 끝 정렬, 이전 버튼 활성화
     $('.main__header-list-inner').animate({ 'left': hidden_list_width }, 300);
-    $('.main__header-more.e_prev').addClass('e_show');
-    $('.main__header-more.e_next').removeClass('e_show');
+    $('.main__header-more.s_prev').addClass('e_show');
+    $('.main__header-more.s_next').removeClass('e_show');
     more_n = 1;
   };
 
 });
 
 //이전 버튼 클릭시 
-$('.main__header-more.e_prev').click(function () {
+$('.main__header-more.s_prev').click(function () {
   windowresize();
 
   //list 오버플로우 사이즈 재측정
@@ -308,17 +308,26 @@ $('.main__header-more.e_prev').click(function () {
     } else if (more_n <= 0) {
       // 리스트 오른쪽 끝 정렬, 이전 버튼 활성화
       $('.main__header-list-inner').animate({ 'left': 0 }, 300);
-      $('.main__header-more.e_prev').removeClass('e_show');
-      $('.main__header-more.e_next').addClass('e_show');
+      $('.main__header-more.s_prev').removeClass('e_show');
+      $('.main__header-more.s_next').addClass('e_show');
       more_n = 0;
     };
   } else if (790 < ww <= 1300) {
     // 리스트 오른쪽 끝 정렬, 이전 버튼 활성화
     $('.main__header-list-inner').animate({ 'left': 0 }, 300);
-    $('.main__header-more.e_prev').removeClass('e_show');
-    $('.main__header-more.e_next').addClass('e_show');
+    $('.main__header-more.s_prev').removeClass('e_show');
+    $('.main__header-more.s_next').addClass('e_show');
     more_n = 0;
   };
 });
+
+
+//썸네일 이미지 높이&너비
+var tumbnail_video_h = $('.main__tumbnail-video iframe').height();
+var tumbnail_img_h = $('.main__tumbnail-img').height(tumbnail_video_h);
+var tumbnail_img_w = (16 * tumbnail_img_h) / 9;
+$('.main__tumbnail-img').width(tumbnail_img_w);
+
+
 
 
