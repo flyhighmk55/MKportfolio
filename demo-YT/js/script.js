@@ -227,35 +227,17 @@ $('.main__header-list-inner').css({ 'width': total_width });
 
 
 
-
+//윈도우 너비에 따른 list의 이전/다음 버튼 활성화 여부
 function header_width() {
   //list의 너비와 list-inner의 너비를 측정해서
   var list_w = $('.main__header-list').width();
   var inner_w = $('.main__header-list-inner').width();
-  console.log(list_w);
-  console.log(inner_w);
-  console.log(list_w - inner_w);
-
-
 
   if (inner_w > list_w) {
-    //list의 너비와 list-inner의 너비를 비교해서  list-inner가 더 크면
-    var p = $('.main__header-list-inner').position();
-    console.log(p);
-
-    if (p.left <= 0) {
-      $('.main__header-list-inner').animate({ 'left': 0 }, 0);
-      // list-inner가 가장 왼쪽에 정렬될 때
-      $('.main__header-more.e_next').addClass('e_show');
-      $('.main__header-more.e_prev').removeClass('e_show');
-    } else if (p.left <= list_w - inner_w) {
-      // list-inner가 가장 오른쪽에 정렬될 때
-      $('.main__header-more.e_prev').addClass('e_show');
-      $('.main__header-more.e_next').removeClass('e_show');
-    } else {
-      // list-inner가 즁간 어딘가에 정렬될 때
-      $('.main__header-more.e_prev, .main__header-more.e_-next').addClass('e_show');
-    }
+    //list의 너비와 list-inner의 너비를 비교해서  list-inner가 더 크면 list-inner가 가장 왼쪽에 정렬
+    $('.main__header-list-inner').animate({ 'left': 0 }, 0);
+    $('.main__header-more.e_next').addClass('e_show');
+    $('.main__header-more.e_prev').removeClass('e_show');
   } else {
     //list의 너비와 list-inner의 너비를 비교해서  list-inner가 더 작으면
     $('.main__header-more.e_prev, .main__header-more.e_next').removeClass('e_show');
@@ -268,38 +250,41 @@ $(window).resize(function () {
 
 
 
-
-
-
-
-
-
-// function hidden_list_width() {
-//   var list_w = $('.main__header-list').width();
-//   var inner_w = $('.main__header-list-inner').width();
-//   var hidden_list_width = list_w - inner_w + 20;
-// }
-
-
-
-
-var n = 0;
+//list 버튼 클릭 이벤트
+var more_n = 0;
 
 //다음 버튼 클릭시 
 $('.main__header-more.e_next').click(function () {
   windowresize();
-  console.log($('.main__header-list-inner').position());
+  // console.log($('.main__header-list-inner').position());
+
+  //list 오버플로우 사이즈 재측정
   var list_w = $('.main__header-list').width();
   var inner_w = $('.main__header-list-inner').width();
   var hidden_list_width = list_w - inner_w - 1;
-  n++;
 
-
-
-  $('.main__header-list-inner').animate({ 'left': hidden_list_width / 2 }, 300);
-  $('.main__header-more.e_prev').addClass('e_show');
-  $('.main__header-more.e_next').removeClass('e_show');
-
+  more_n++;
+  console.log(more_n);
+  if (ww <= 790) {
+    if (more_n <= 1) {
+      // 리스트 중간 정렬, 이전 버튼 활성화
+      $('.main__header-list-inner').animate({ 'left': hidden_list_width / 2 }, 300);
+      $('.main__header-more').addClass('e_show');
+      more_n = 1;
+    } else if (more_n >= 2) {
+      // 리스트 오른쪽 끝 정렬, 이전 버튼 활성화
+      $('.main__header-list-inner').animate({ 'left': hidden_list_width }, 300);
+      $('.main__header-more.e_prev').addClass('e_show');
+      $('.main__header-more.e_next').removeClass('e_show');
+      more_n = 2;
+    };
+  } else if (790 < ww <= 1300) {
+    // 리스트 오른쪽 끝 정렬, 이전 버튼 활성화
+    $('.main__header-list-inner').animate({ 'left': hidden_list_width }, 300);
+    $('.main__header-more.e_prev').addClass('e_show');
+    $('.main__header-more.e_next').removeClass('e_show');
+    more_n = 1;
+  };
 
 });
 
@@ -307,17 +292,33 @@ $('.main__header-more.e_next').click(function () {
 $('.main__header-more.e_prev').click(function () {
   windowresize();
 
+  //list 오버플로우 사이즈 재측정
   var list_w = $('.main__header-list').width();
   var inner_w = $('.main__header-list-inner').width();
-  var hidden_list_width = -(list_w - inner_w - 1);
+  var hidden_list_width = list_w - inner_w - 1;
 
-
-
-  $('.main__header-list-inner').animate({ 'left': 0 }, 300);
-  $('.main__header-more.e_prev').removeClass('e_show');
-  $('.main__header-more.e_next').addClass('e_show');
-
-  // console.log(n);
+  more_n--;
+  console.log(more_n);
+  if (ww <= 790) {
+    if (more_n >= 1) {
+      // 리스트 중간 정렬, 이전 버튼 활성화
+      $('.main__header-list-inner').animate({ 'left': hidden_list_width / 2 }, 300);
+      $('.main__header-more').addClass('e_show');
+      more_n = 1;
+    } else if (more_n <= 0) {
+      // 리스트 오른쪽 끝 정렬, 이전 버튼 활성화
+      $('.main__header-list-inner').animate({ 'left': 0 }, 300);
+      $('.main__header-more.e_prev').removeClass('e_show');
+      $('.main__header-more.e_next').addClass('e_show');
+      more_n = 0;
+    };
+  } else if (790 < ww <= 1300) {
+    // 리스트 오른쪽 끝 정렬, 이전 버튼 활성화
+    $('.main__header-list-inner').animate({ 'left': 0 }, 300);
+    $('.main__header-more.e_prev').removeClass('e_show');
+    $('.main__header-more.e_next').addClass('e_show');
+    more_n = 0;
+  };
 });
 
 
