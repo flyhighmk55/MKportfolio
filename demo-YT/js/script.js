@@ -338,12 +338,26 @@ $(window).resize(function () {
 
 
 
+$('.main__tumbnail-video').append('<div class="video-cover"></div>');
+
+
+
 
 //썸네일 영상 옵션 자동 추가
 var video_attr = $('.video-container iframe').attr('src');
-var video_attr_option = '&enablejsapi=1&version=3&playerapiid=ytplayer&mute=1&controls=0&rel=0&fs=0&loop=1&autohide=1&playsinline=1&modestbranding=1';
+var video_attr_option = '&enablejsapi=1&version=3&playerapiid=ytplaye&autoplay=1&mute=1&controls=0&rel=0&fs=0&loop=1&autohide=1&playsinline=1&modestbranding=1';
 
 $('.video-container iframe').attr('src', video_attr + video_attr_option);
+
+
+//
+
+function video_ready(){
+  	$("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+};
+setTimeout(video_ready,5000);
+
+
 
 
 
