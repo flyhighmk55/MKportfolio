@@ -323,11 +323,44 @@ $('.main__header-more.s_prev').click(function () {
 
 
 //썸네일 이미지 높이&너비
-var tumbnail_video_h = $('.main__tumbnail-video iframe').height();
-$('.main__tumbnail-img').height(tumbnail_video_h);
-var tumbnail_img_h = $('.main__tumbnail-img').height(tumbnail_video_h);
-var tumbnail_img_w = (16 * tumbnail_img_h) / 9;
-$('.main__tumbnail-img').width(tumbnail_img_w);
+function tumbnail_size (){
+  var tumbnail_video_h = $('.main__tumbnail-video iframe').height();
+  $('.main__tumbnail-img').height(tumbnail_video_h);
+  var tumbnail_img_h = $('.main__tumbnail-img').height(tumbnail_video_h);
+  var tumbnail_img_w = (16 * tumbnail_img_h) / 9;
+  $('.main__tumbnail-img').width(tumbnail_img_w);
+};
+tumbnail_size();
+$(window).resize(function () {
+  tumbnail_size();
+});
+
+
+
+
+
+//썸네일 영상 옵션 자동 추가
+var video_attr = $('.video-container iframe').attr('src');
+var video_attr_option = '&enablejsapi=1&version=3&playerapiid=ytplayer&mute=1&controls=0&rel=0&fs=0&loop=1&autohide=1&playsinline=1&modestbranding=1';
+
+$('.video-container iframe').attr('src', video_attr + video_attr_option);
+
+
+
+//.main__contants-item 마우스오버시 영상 재생
+$(".main__contants-item").on('mouseover', function(){
+	$("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+});
+//.main__contants-item 마우스리브시 영상 일시정지
+$(".main__contants-item").on('mouseleave', function(){
+	$("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+});
+
+
+
+
+
+
 
 
 
