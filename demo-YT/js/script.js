@@ -324,11 +324,9 @@ $('.main__header-more.s_prev').click(function () {
 
 //썸네일 이미지 높이&너비
 function tumbnail_size (){
-  var tumbnail_video_h = $('.main__tumbnail-video iframe').height();
-  $('.main__tumbnail-img').height(tumbnail_video_h);
-  var tumbnail_img_h = $('.main__tumbnail-img').height(tumbnail_video_h);
-  var tumbnail_img_w = (16 * tumbnail_img_h) / 9;
-  $('.main__tumbnail-img').width(tumbnail_img_w);
+  var tumbnail_img_w = $('.main__tumbnail-img').width();
+  var tumbnail_img_h = (9 * tumbnail_img_w) / 16;
+  $('.main__tumbnail-img').height(tumbnail_img_h);
 };
 tumbnail_size();
 $(window).resize(function () {
@@ -336,66 +334,64 @@ $(window).resize(function () {
 });
 
 
-
+//iframe 기본형태 자동삽입
+$('.video-container').append('<iframe width="100%" height="100%" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>');
 //영상에 호버되면 제목과 라벨이 표시되는 것을 방지하기 위해 커버로 덮음
 $('.main__tumbnail-video').append('<div class="video-cover"></div>');
 
 
 
 
-var main_item_l = $('.main__contants-item').length -1;
-for(var n = 0; n <= main_item_l; n++){
-console.log(n);
-  //썸네일 영상에 옵션 추가를 위해 src 추출
-  var video_attr = $('.main__contants-item').eq(n).find('.video-container iframe').attr('src');
+//.main__contants-item 마우스오버시 영상 재생
+$('.main__contants-item').addClass('e_src');
 
-  //유튜브 영상 뒤에 추천영상을 없애기 위해 영상 아이디 추출
-  var video_id_start = video_attr.indexOf('embed/') +6;
-  var video_id_end = video_attr.indexOf('?');
-  var video_id = video_attr.substring(video_id_start, video_id_end);
-  console.log(video_id);
+$('.main__contants-item').on('mouseover', function(){
 
+  if($(this).hasClass('e_src') === true ){
+    //src 추출
+    var video_attr = $(this).children('a:first-child').attr('data-video-src');
+
+    //유튜브 영상 뒤에 추천영상을 없애기 위해 영상 아이디 추출
+    var video_id_start = video_attr.indexOf('embed/') +6;
+    var video_id_end = video_attr.indexOf('?');
+    var video_id = video_attr.substring(video_id_start, video_id_end);
+//    console.log(video_id);
+
+    //썸네일 영상에 옵션 추가
+    var video_attr_option = '&enablejsapi=1&version=3&playerapiid=ytplaye&autoplay=1&mute=1&controls=0&rel=0&fs=0&loop=1&playlist='+video_id+'&autohide=1&playsinline=1&modestbranding=1';
+
+    $(this).find('iframe').attr('src', video_attr + video_attr_option);
+    
+    $(this).removeClass('e_src');
+    
+  } else if($(this).hasClass('data-src') === false){
+    $(this).find("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*')
+  }
+});
   
-  //썸네일 영상에 옵션 자동 추가
-  var video_attr_option = '&enablejsapi=1&version=3&playerapiid=ytplaye&autoplay=1&mute=1&controls=0&rel=0&fs=0&loop=1&playlist='+video_id+'&autohide=1&playsinline=1&modestbranding=1';
 
-  $('.main__contants-item').eq(n).find('.video-container iframe').attr('src', video_attr + video_attr_option);
-
-  
-  
-};
-
-
-
+//.main__contants-item 마우스리브시 영상 일시정지
+$('.main__contants-item').on('mouseleave', function(){
+	$(this).find('iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+});
 
 
 
 
 
 //영상 시작 5초간 제목과 라벨이 표시되는 것을 보이지 않게 하는 임시방편
-function video_ready(){
-  	$("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-};
-setTimeout(video_ready,5000);
-
-
-//.main__contants-item 마우스오버시 영상 재생
-$(".main__contants-item").on('mouseover', function(){
-	$("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
-});
-//.main__contants-item 마우스리브시 영상 일시정지
-$(".main__contants-item").on('mouseleave', function(){
-	$("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-});
-
-
-
-
-//임시영상 리스트
-for(var n=0; n<=3; n++){
-  var item_temp_clone = $('.main__contants-item:last-child').clone();
-  $('.main__contants-item:last-child').parent().append(item_temp_clone);
-};
-
+//function video_ready(){
+//  	$("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+//};
+//setTimeout(video_ready,5000);
+//
+//
+//
+////임시영상 리스트
+//for(var n=0; n<=3; n++){
+//  var item_temp_clone = $('.main__contants-item:last-child').clone();
+//  $('.main__contants-item:last-child').parent().append(item_temp_clone);
+//};
+//
 
 

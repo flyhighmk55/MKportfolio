@@ -672,7 +672,7 @@
 .video-container {
   position: relative;
   height: 0;
-  padding-bottom: 56%;
+  padding-bottom: 56.25%;
 }
 
 .main__tumbnail-video iframe {
