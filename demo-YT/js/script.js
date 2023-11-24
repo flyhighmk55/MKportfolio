@@ -341,7 +341,9 @@ $(window).resize(function () {
 $('.main__tumbnail-video').append('<div class="video-cover"></div>');
 
 
-var main_item_l = $('.main__contants-item').length;
+
+
+var main_item_l = $('.main__contants-item').length -1;
 for(var n = 0; n <= main_item_l; n++){
 console.log(n);
   //썸네일 영상에 옵션 추가를 위해 src 추출
@@ -389,12 +391,11 @@ $(".main__contants-item").on('mouseleave', function(){
 
 
 
-
-
-
-
-
-
+//임시영상 리스트
+for(var n=0; n<=3; n++){
+  var item_temp_clone = $('.main__contants-item:last-child').clone();
+  $('.main__contants-item:last-child').parent().append(item_temp_clone);
+};
 
 
 
