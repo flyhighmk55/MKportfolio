@@ -337,28 +337,44 @@ $(window).resize(function () {
 
 
 
-
+//영상에 호버되면 제목과 라벨이 표시되는 것을 방지하기 위해 커버로 덮음
 $('.main__tumbnail-video').append('<div class="video-cover"></div>');
 
 
+var main_item_l = $('.main__contants-item').length;
+for(var n = 0; n <= main_item_l; n++){
+console.log(n);
+  //썸네일 영상에 옵션 추가를 위해 src 추출
+  var video_attr = $('.main__contants-item').eq(n).find('.video-container iframe').attr('src');
+
+  //유튜브 영상 뒤에 추천영상을 없애기 위해 영상 아이디 추출
+  var video_id_start = video_attr.indexOf('embed/') +6;
+  var video_id_end = video_attr.indexOf('?');
+  var video_id = video_attr.substring(video_id_start, video_id_end);
+  console.log(video_id);
+
+  
+  //썸네일 영상에 옵션 자동 추가
+  var video_attr_option = '&enablejsapi=1&version=3&playerapiid=ytplaye&autoplay=1&mute=1&controls=0&rel=0&fs=0&loop=1&playlist='+video_id+'&autohide=1&playsinline=1&modestbranding=1';
+
+  $('.main__contants-item').eq(n).find('.video-container iframe').attr('src', video_attr + video_attr_option);
+
+  
+  
+};
 
 
-//썸네일 영상 옵션 자동 추가
-var video_attr = $('.video-container iframe').attr('src');
-var video_attr_option = '&enablejsapi=1&version=3&playerapiid=ytplaye&autoplay=1&mute=1&controls=0&rel=0&fs=0&loop=1&autohide=1&playsinline=1&modestbranding=1';
-
-$('.video-container iframe').attr('src', video_attr + video_attr_option);
 
 
-//
 
+
+
+
+//영상 시작 5초간 제목과 라벨이 표시되는 것을 보이지 않게 하는 임시방편
 function video_ready(){
   	$("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
 };
 setTimeout(video_ready,5000);
-
-
-
 
 
 //.main__contants-item 마우스오버시 영상 재생
@@ -369,6 +385,9 @@ $(".main__contants-item").on('mouseover', function(){
 $(".main__contants-item").on('mouseleave', function(){
 	$("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
 });
+
+
+
 
 
 

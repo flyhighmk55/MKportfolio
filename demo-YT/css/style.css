@@ -638,18 +638,22 @@
 
 .main__contants-container {
   width: 100%;
-  max-width: 1300px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  padding: 0 10px;
+  padding: 0 20px;
+  grid-column-gap: 20px;
+  grid-row-gap: 50px;
 }
 
 .main__contants-item {
   background: #ddd;
-  margin: 0 10px;
   position: relative;
 }
+.main__contants-item:nth-child(n+7) {
+  display: none;
+}
+
 
 .main__item-tumbnail {
   width: 100%;
@@ -677,7 +681,7 @@
 .video-container {
   position: relative;
   height: 0;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.5%;
 }
 
 .main__tumbnail-video iframe {
@@ -717,6 +721,7 @@
   margin-top: 8px;
   font-size: 1.4rem;
   color: #666;
+  fill: #666;
 }
 .main__text-user-type {
   font-size: 1.2rem;
@@ -724,6 +729,26 @@
   color: #222;
 }
 .main__text-user-type::after {
+  content: '•';
+  display: inline-block;
+  font-size: 10px;
+  margin-left: 2px;
+}
+.main__text-user-official {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  position: relative;
+  top: 1px;
+}
+
+.main__text-info {
+  margin-top: 8px;
+  font-size: 1.4rem;
+  color: #666;
+}
+
+.main__info-views::after {
   content: '•';
   display: inline-block;
   font-size: 10px;
@@ -764,10 +789,6 @@
   
 }
 
-
-
-
-
 .video-cover {
   position: absolute;
   left: 0;
@@ -779,6 +800,47 @@
 
 
 
+@media (min-width:2200px) {
+  .main__contants-container {
+    max-width: 2200px;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .main__contants-item:nth-child(n+13) {
+    display: none;
+  }
+}
+@media (min-width:1900px) {
+  .main__contants-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .main__contants-item:nth-child(n+11) {
+    display: none;
+  }
+}
+@media (min-width:1600px) {
+  .main__contants-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .main__contants-item:nth-child(n+9) {
+    display: none;
+  }
+}
+@media (max-width:1100px) {
+  .main__contants-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main__contants-item:nth-child(n+5) {
+    display: none;
+  }
+}
+@media (max-width:700px) {
+  .main__contants-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .main__contants-item:nth-child(n+3) {
+    display: none;
+  }
+}
 
 
 
