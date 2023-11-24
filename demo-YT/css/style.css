@@ -643,6 +643,7 @@
 }
 
 .main__contants-item {
+  cursor: pointer;
   position: relative;
 }
 

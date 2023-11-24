@@ -334,12 +334,22 @@ $(window).resize(function () {
 });
 
 
+$('.main__item-desc').append('<button class="main__desc-more"><div class="icon-container"><div class="icon-shaper"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="M12 16.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM10.5 12c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5zm0-6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5z"></path></svg></div></div></button>');
+
+$('.main__text-user.e_official').append('<span class="main__text-user-official"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z"></path></svg></span>');
+
+
+
+
+//모든 이미지 천천히 다운
+$('img').attr('loading', 'lazy');
+
+
+
 //iframe 기본형태 자동삽입
 $('.video-container').append('<iframe width="100%" height="100%" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>');
 //영상에 호버되면 제목과 라벨이 표시되는 것을 방지하기 위해 커버로 덮음
 $('.main__tumbnail-video').append('<div class="video-cover"></div>');
-
-
 
 
 //.main__contants-item 마우스오버시 영상 재생
