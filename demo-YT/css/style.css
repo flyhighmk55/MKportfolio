@@ -977,12 +977,18 @@
         }
 
         @media (max-width:700px) {
-          .main__contants-container {
+          .main__contants-container.s_long {
             padding: 0;
             grid-template-columns: repeat(1, 1fr);
           }
-          .main__item-desc {
-            padding: 0 20px;
+          .s_long .main__tumbnail-img {
+            border-radius: 0;
+          }
+          .s_long .main__item-desc {
+            padding: 20px;
+          }
+          .s_long .main__item-feedback {
+            margin: 10px 20px 0;
           }
           .s_main .main__contants-item:nth-child(n+3) {
             display: none;

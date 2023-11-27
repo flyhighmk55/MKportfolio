@@ -1362,6 +1362,7 @@ body {
   max-height: 500px;
   margin-top: 10px;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .popup__main-img img {

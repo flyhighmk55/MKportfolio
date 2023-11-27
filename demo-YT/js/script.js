@@ -375,12 +375,6 @@ $('.main__text-user.e_official').append('<span class="main__text-user-official">
 
 
 
-
-//모든 이미지 천천히 다운
-$('img').attr('loading', 'lazy');
-
-
-
 //iframe 기본형태 자동삽입
 $('.video-container').append('<iframe width="100%" height="100%" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>');
 
@@ -396,13 +390,16 @@ $('.main__tumbnail-video').append('<div class="video-cover"></div>');
 
 
 
+//모든 이미지 천천히 다운
+$('img').attr('loading', 'lazy');
+
+
 //.s_long .main__contants-item 마우스오버시 영상 재생
 $('.s_long .main__contants-item').addClass('e_src');
 
 $('.s_long .main__contants-item').on('mouseover', function(){
-
   if($(this).hasClass('e_src') === true ){
-    //src 추출
+    //비디오 src 추출
     var video_attr = $(this).children('a:first-child').attr('data-video-src');
 
     //유튜브 영상 뒤에 추천영상을 없애기 위해 영상 아이디 추출
