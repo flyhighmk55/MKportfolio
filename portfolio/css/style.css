@@ -611,7 +611,6 @@ body {
   z-index: -1;
 }
 
-https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
 
 .index-about__cont-img {
   flex: 0 400px;
@@ -1112,6 +1111,9 @@ https: //flyhighmk55.github.io/MKportfolio/img/cont/popup_ydfunction3.svg
 
 .p-pf .project__item-img {
   background-image: url(../img/cont/project_pf.svg);
+}
+.p-yt .project__item-img {
+  background-image: url(../img/cont/project_yt.svg);
 }
 
 
