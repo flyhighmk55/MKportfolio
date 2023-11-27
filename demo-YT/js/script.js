@@ -322,11 +322,40 @@ $('.main__header-more.s_prev').click(function () {
 });
 
 
+
+
+
+
+
+
+
+
+
+//임시영상 추가
+for(var n=0; n<=3; n++){
+  var long_item_temp_clone = $('.s_long .main__contants-item:last-child').clone();
+  $('.s_long .main__contants-item:last-child').parent().append(long_item_temp_clone);
+};
+for(var n=0; n<=5; n++){
+  var shorts_item_temp_clone = $('.s_shorts .main__contants-item:last-child').clone();
+  $('.s_shorts .main__contants-item:last-child').parent().append(shorts_item_temp_clone);
+};
+
+
+
+
+
 //썸네일 이미지 높이&너비
 function tumbnail_size (){
-  var tumbnail_img_w = $('.main__tumbnail-img').width();
-  var tumbnail_img_h = (9 * tumbnail_img_w) / 16;
-  $('.main__tumbnail-img').height(tumbnail_img_h);
+  
+  var long_tumbnail_img_w = $('.s_long .main__tumbnail-img').width();
+  var shorts_tumbnail_img_w = $('.s_shorts .main__tumbnail-img').width();
+  
+  var long_tumbnail_img_h = (9 * long_tumbnail_img_w) / 16;
+  var shorts_tumbnail_img_h = (16 * shorts_tumbnail_img_w) / 9;
+  
+  $('.s_long .main__tumbnail-img').height(long_tumbnail_img_h);
+  $('.s_shorts .main__tumbnail-img').height(shorts_tumbnail_img_h);
 };
 tumbnail_size();
 $(window).resize(function () {
@@ -334,9 +363,15 @@ $(window).resize(function () {
 });
 
 
+
+
+
+// 더보기 버튼 자동 생성
 $('.main__item-desc').append('<button class="main__desc-more"><div class="icon-container"><div class="icon-shaper"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="M12 16.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM10.5 12c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5zm0-6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5z"></path></svg></div></div></button>');
 
+//오피셜 마크 자동 생성
 $('.main__text-user.e_official').append('<span class="main__text-user-official"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z"></path></svg></span>');
+
 
 
 
@@ -348,14 +383,23 @@ $('img').attr('loading', 'lazy');
 
 //iframe 기본형태 자동삽입
 $('.video-container').append('<iframe width="100%" height="100%" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>');
+
+
+
 //영상에 호버되면 제목과 라벨이 표시되는 것을 방지하기 위해 커버로 덮음
 $('.main__tumbnail-video').append('<div class="video-cover"></div>');
 
 
-//.main__contants-item 마우스오버시 영상 재생
-$('.main__contants-item').addClass('e_src');
 
-$('.main__contants-item').on('mouseover', function(){
+
+
+
+
+
+//.s_long .main__contants-item 마우스오버시 영상 재생
+$('.s_long .main__contants-item').addClass('e_src');
+
+$('.s_long .main__contants-item').on('mouseover', function(){
 
   if($(this).hasClass('e_src') === true ){
     //src 추출
@@ -380,8 +424,8 @@ $('.main__contants-item').on('mouseover', function(){
 });
   
 
-//.main__contants-item 마우스리브시 영상 일시정지
-$('.main__contants-item').on('mouseleave', function(){
+//.s_long .main__contants-item 마우스리브시 영상 일시정지
+$('.s_long .main__contants-item').on('mouseleave', function(){
 	$(this).find('iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
 });
 
@@ -389,19 +433,66 @@ $('.main__contants-item').on('mouseleave', function(){
 
 
 
-//영상 시작 5초간 제목과 라벨이 표시되는 것을 보이지 않게 하는 임시방편
-//function video_ready(){
-//  	$("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-//};
-//setTimeout(video_ready,5000);
+
+
+
+
+//.s_shorts .main__contants-item 마우스오버시 영상 재생
+$('.s_shorts .main__contants-item').on('mouseover', function(){
+
+  var video_attr = $(this).children('a:first-child').attr('data-video-src');
+
+  //유튜브 영상 뒤에 추천영상을 없애기 위해 영상 아이디 추출
+  var video_id_start = video_attr.indexOf('embed/') +6;
+  var video_id = video_attr.substring(video_id_start);
+  console.log(video_id);
+
+  //썸네일 영상에 옵션 추가
+  var video_attr_option = '?enablejsapi=1&version=3&playerapiid=ytplaye&autoplay=1&mute=1&controls=0&rel=0&fs=0&loop=1&playlist='+video_id+'&autohide=1&playsinline=1&modestbranding=1&end=5';
+
+
+  $(this).find('iframe').attr('src', video_attr + video_attr_option);
+
+});
+
+
+//.s_shorts .main__contants-item 마우스리브시 영상 일시정지
+$('.s_shorts .main__contants-item').on('mouseleave', function(){
+  
+  $(this).find('iframe').attr('src', '');
+});
+
+
+
+
+
+
+//.main__shorts-more-bt .s_list-brief 클릭 이벤트
+$('.main__shorts-more-btn .s_list-brief').click(function () {
+
+  $(this).parents('#main__contants').find('.s_shorts').toggleClass('e_more');
+
+});
+
+
+
+
 //
+$('.main__shorts-close').click(function(){
+  $('.main__shorts-title-area, .main__shorts-close, .s_shorts, .main__shorts-more, .main__shorts-close-info').addClass('e_hide');
+  
+});
+
 //
-//
-////임시영상 리스트
-//for(var n=0; n<=3; n++){
-//  var item_temp_clone = $('.main__contants-item:last-child').clone();
-//  $('.main__contants-item:last-child').parent().append(item_temp_clone);
-//};
-//
+$('.main__shorts-close-info button').click(function(){
+  $('.main__shorts-title-area, .main__shorts-close, .s_shorts, .main__shorts-more, .main__shorts-close-info').removeClass('e_hide');
+});
+
+
+
+
+
+
+
 
 
