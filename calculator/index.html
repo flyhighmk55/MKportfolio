@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>bracket calculator</title>
+  <!-- 외부 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> <!-- jquery library-->
+
+
+  <!-- 내부 -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="cal">
+    <div class="cal__setting">
+      <div class="setting__bring">
+        <button class="bring__btn"></button>
+      </div>
+      <div class="setting__mood">
+        <div class="mood__track">
+          <div class="mood__bar">
+            <div class="mood__bar-inner"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cal__screen">
+      <div class="screen__formula">#</div>
+      <div class="screen__answer s_colorfont">#</div>
+    </div>
+    <div class="cal__input">
+      <div class="btn-frame">
+        <div id="allclear" class="input__btn s_colorbg">AC</div>
+      </div>
+      <div class="btn-frame">
+        <div id="clear" class="input__btn s_colorfont">C</div>
+      </div>
+      <div class="btn-frame">
+        <div id="persent" value="%" class="input__btn s_colorfont">&#37;</div>
+      </div>
+      <div class="btn-frame">
+        <div id="times" value="*" class="input__btn s_colorfont">&times;</div>
+      </div>
+      <div class="btn-frame">
+        <div id="n7" value="7" class="input__btn">7</div>
+      </div>
+      <div class="btn-frame">
+        <div id="n8" value="8" class="input__btn">8</div>
+      </div>
+      <div class="btn-frame">
+        <div id="n9" value="9" class="input__btn">9</div>
+      </div>
+      <div class="btn-frame">
+        <div id="divide" value="/" class="input__btn s_colorfont">&divide;</div>
+      </div>
+      <div class="btn-frame">
+        <div id="n4" value="4" class="input__btn">4</div>
+      </div>
+      <div class="btn-frame">
+        <div id="n5" value="5" class="input__btn">5</div>
+      </div>
+      <div class="btn-frame">
+        <div id="n6" value="6" class="input__btn">6</div>
+      </div>
+      <div class="btn-frame">
+        <div id="plus" value="+" class="input__btn s_colorfont">&#43;</div>
+      </div>
+      <div class="btn-frame">
+        <div id="n1" value="1" class="input__btn">1</div>
+      </div>
+      <div class="btn-frame">
+        <div id="n2" value="2" class="input__btn">2</div>
+      </div>
+      <div class="btn-frame">
+        <div id="n3" value="3" class="input__btn">3</div>
+      </div>
+      <div class="btn-frame">
+        <div id="minus" value="-" class="input__btn s_colorfont">-</div>
+      </div>
+      <div class="btn-frame">
+        <div id="n0" value="0" class="input__btn">0</div>
+      </div>
+      <div class="btn-frame">
+        <div id="dot" value="." class="input__btn">&middot;</div>
+      </div>
+      <div class="btn-frame">
+        <div id="bracet-left" value="(" class="input__btn s_colorfont">&#40;</div>
+      </div>
+      <div class="btn-frame">
+        <div id="bracet-right" value=")" class="input__btn s_colorfont">&#41;</div>
+      </div>
+    </div>
+      <div class="btn-frame">
+        <div id="submit" class="input__btn s_colorbg">&#61;</div>
+      </div>
+  </div>
+  <div id="list"></div>
+</body>
+</html>

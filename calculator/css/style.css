@@ -1,0 +1,103 @@
+.s_colorfont {
+  color: #4200FF;
+}
+
+#cal {
+  margin: auto;
+  background: #f6f6f6;
+  width: 400px;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 6px #00000044;
+}
+
+
+.cal__setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bring__btn {
+  background: url(../img/clock.svg) no-repeat center/cover;
+  height: 38px;
+  width: 38px;
+}
+
+.mood__track {
+  height: 30px;
+  width: 70px;
+  border-radius: 30px;
+  box-shadow: inset 3px 3px 6px #00000044;
+  background: #00000022;
+}
+
+.mood__bar {
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  box-shadow: 3px 3px 6px #00000044;
+}
+.mood__bar-inner {
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  box-shadow: inset 3px 3px 3px #fff;
+  background: #f6f6f6;
+}
+
+
+.cal__screen {
+  margin-top: 10px;
+  width: 100%;
+  height: 150px;
+  border-radius: 20px;
+  box-shadow: inset 3px 3px 10px #00000044;
+  padding: 30px 20px;
+  position: relative;
+}
+
+.screen__formula {
+  text-align: end;
+  font-size: 3rem;
+  color: #707070;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.screen__answer {
+  text-align: end;
+  font-size: 4rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+}
+
+
+.cal__input {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 2%;
+}
+
+.btn-frame {
+  border-radius: 20px;
+  box-shadow: -3px -3px 10px #fff;
+}
+
+
+
+
+
+
+
+
+
+
+

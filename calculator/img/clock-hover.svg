@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="42.265" height="42.265" viewBox="0 0 42.265 42.265">
+  <defs>
+    <filter id="clock-rotate-left-solid" x="0" y="0" width="42.265" height="42.265" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.278" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g data-type="innerShadowGroup">
+    <path id="clock-rotate-left-solid-2" data-name="clock-rotate-left-solid" d="M4.395,4.395,2.4,2.4a1.408,1.408,0,0,0-2.4.99V9.844A1.4,1.4,0,0,0,1.406,11.25H7.857a1.408,1.408,0,0,0,1-2.4l-1.8-1.8A11.248,11.248,0,1,1,8.572,24.234a1.877,1.877,0,1,0-2.15,3.076A15,15,0,1,0,4.395,4.395ZM15,7.5a1.4,1.4,0,0,0-1.406,1.406V15A1.405,1.405,0,0,0,14,16l4.219,4.219a1.4,1.4,0,0,0,1.986-1.986L16.4,14.42V8.906A1.4,1.4,0,0,0,14.994,7.5Z" transform="translate(19.284) rotate(40)" fill="rgba(136,95,255,0.64)"/>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#clock-rotate-left-solid)">
+      <path id="clock-rotate-left-solid-3" data-name="clock-rotate-left-solid" d="M4.395,4.395,2.4,2.4a1.408,1.408,0,0,0-2.4.99V9.844A1.4,1.4,0,0,0,1.406,11.25H7.857a1.408,1.408,0,0,0,1-2.4l-1.8-1.8A11.248,11.248,0,1,1,8.572,24.234a1.877,1.877,0,1,0-2.15,3.076A15,15,0,1,0,4.395,4.395ZM15,7.5a1.4,1.4,0,0,0-1.406,1.406V15A1.405,1.405,0,0,0,14,16l4.219,4.219a1.4,1.4,0,0,0,1.986-1.986L16.4,14.42V8.906A1.4,1.4,0,0,0,14.994,7.5Z" transform="translate(19.28) rotate(40)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
