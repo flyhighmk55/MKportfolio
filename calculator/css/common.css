@@ -246,7 +246,6 @@
     color: var(--color-b);
     font-family: var(--font-family-main);
     font-size: 1.6rem;
-    overflow: hidden;
     box-sizing: border-box;
   }
 
