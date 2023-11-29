@@ -58,7 +58,7 @@ body {
   position: relative;
 }
 
-.screen__formula {
+#screen__formula {
   text-align: end;
   font-size: 3rem;
   color: #707070;
@@ -69,7 +69,7 @@ body {
 }
 
 
-.screen__answer {
+#screen__answer {
   text-align: end;
   font-size: 4rem;
   font-weight: bold;
@@ -154,12 +154,16 @@ button {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 20px;
-  margin: 0 20px;
+  margin: 20px;
 }
-
 #list__recent {
   border-bottom: 1px solid var(--theam1-point1);
+}
+.list__past-items {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 20px 10px;
 }
 .list__item {
   background: var(--theam1-point2);
