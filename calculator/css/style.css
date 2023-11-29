@@ -1,7 +1,10 @@
-
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+}
 #cal {
-  margin: auto;
-  background: #f6f6f6;
+  background: var(--theam1-main);
   width: 400px;
   padding: 20px 30px;
   border-radius: 20px;
@@ -41,7 +44,7 @@
   width: 30px;
   border-radius: 30px;
   box-shadow: inset 3px 3px 3px #fff;
-  background: #f6f6f6;
+  background: var(--theam1-main);
 }
 
 
@@ -86,16 +89,16 @@
 }
 
 .btn-frame {
-  border-radius: 20px;
-/*  box-shadow: -6px -6px 6px #fff;*/
+  border-radius: 35px;
   box-shadow: 3px 3px 6px #00000033;
   padding: 3px;
   box-sizing: border-box;
   background: #e7e7e7;
+  border: 1px solid #ddd;
+  cursor: pointer;
 }
 .input__btn {
-  border-radius: 18px;
-/*  box-shadow: 3px 3px 6px #00000022;*/
+  border-radius: 32px;
   box-shadow: -3px -6px 6px #fff;
   display: flex;
   justify-content: center;
@@ -103,32 +106,63 @@
   font-size: 3rem;
   height: 60px;
   color: #707070;
-  background: #f7f7f7;
+  background: var(--theam1-main); 
+  box-sizing: border-box;
 }
 .btn-frame:last-child {
   grid-area: submit;
 }
 
 .s_colorfont {
-  color: #4200FF;
+  color: var(--theam1-point1);
 }
 .s_colorbg {
  color: #fff;
-  background: #4200FF;
+  background: var(--theam1-point1);
 }
 .s_colorbg.input__btn {
   box-shadow: -6px -6px 6px #ffffff66;
-  background: #5D24FF;
+  background: var(--theam1-point1-1);
   
 }
 
-
+.btn-frame:nth-child(n+19):nth-child(-n+20) {
+  background: var(--theam1-point2-1);
+}
 #bracet-left, #bracet-right {
-  background: #885FFF22;
+  background: var(--theam1-point2);
 }
 
+.btn-frame:active, .btn-frame:active .input__btn {
+  box-shadow: inset 1px 1px 10px #00000022;
+}
+.btn-frame:active .input__btn {
+  padding-top: 3px;
+}
+#times, #divide, #plus, #minus, #submit {
+  font-size: 4.3rem;
+}
+button {
+ width: 100%;
+}
 
+#list {
+  width: 300px;
+  padding-top: 100px;
+}
+.list__box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  margin: 0 20px;
+}
 
-
-
-
+#list__recent {
+  border-bottom: 1px solid var(--theam1-point1);
+}
+.list__item {
+  background: var(--theam1-point2);
+  border-radius: 5px;
+  padding: 0.3em 0.5em;
+}

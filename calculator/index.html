@@ -26,15 +26,15 @@
       </div>
     </div>
     <div class="cal__screen">
-      <div class="screen__formula">#</div>
+      <div class="screen__formula"></div>
       <div class="screen__answer s_colorfont">#</div>
     </div>
     <div class="cal__input">
       <div class="btn-frame s_colorbg">
-        <div id="allclear" class="input__btn s_colorbg">AC</div>
+        <button id="allclear" class="input__btn s_colorbg">AC</button>
       </div>
       <div class="btn-frame">
-        <div id="clear" class="input__btn s_colorfont">C</div>
+        <button id="clear" class="input__btn s_colorfont">C</button>
       </div>
       <div class="btn-frame">
         <div id="persent" value="%" class="input__btn s_colorfont">&#37;</div>
@@ -85,16 +85,24 @@
         <div id="dot" value="." class="input__btn">&middot;</div>
       </div>
       <div class="btn-frame">
-        <div id="bracet-left" value="(" class="input__btn s_colorfont">&#40;</div>
+        <div id="bracet-left" value="*(" class="input__btn s_colorfont">&#40;</div>
       </div>
       <div class="btn-frame">
         <div id="bracet-right" value=")" class="input__btn s_colorfont">&#41;</div>
       </div>
       <div class="btn-frame s_colorbg">
-        <div id="submit" class="input__btn s_colorbg">&#61;</div>
+        <button id="submit" class="input__btn s_colorbg">&#61;</button>
       </div>
     </div>
   </div>
-  <div id="list"></div>
+  <div id="list">
+    <div id="list__recent" class="list__box">
+      <div id="recent__formula" class="list__item" ></div>
+      <div class="list__eq">=</div>
+      <div id="recent__answer" class="list__item"></div>
+    </div>
+    <div id="list__past" class="list__box"></div>
+  </div>
+  <script src="js/script.js"></script>
 </body>
 </html>

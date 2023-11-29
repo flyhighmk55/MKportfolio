@@ -203,24 +203,12 @@
     --root-font-size: 62.5%;
     --font-family-main: 'Roboto', sans-serif;
 
-    /*박스 스타일-------------------------*/
-    --header-height: 56px;
-    --wrap-max-width: 4500px;
-    --gnb-width: 240px;
-    /*icon 스타일-------------------------*/
-    --icon-width: 24px;
-    --icon-height: 24px;
-    --icon-contaner-width: calc(var(--icon-width) + 16px);
-    --icon-contaner-height: calc(var(--icon-height) + 16px);
-
-    /*컬러 모음-------------------------*/
-    --icon-hover-color: #ddd;
-    --icon-selected-color: #f1f1f1;
-    --info1-color: #676767;
-    --border-color: #ccc;
-    --side-nav-color: #0f0f0f;
-
-    --bg-color-w: #fff;
+    /*-------------------------*/
+    --theam1-main : #f6f6f6;
+    --theam1-point1 : #4200FF;
+    --theam1-point1-1 : #5D24FF;
+    --theam1-point2 : #E2E4FD;
+    --theam1-point2-1 : #D1D4F8;
   }
 
 }
