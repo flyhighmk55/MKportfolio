@@ -10,8 +10,19 @@ body {
   border-radius: 20px;
   box-shadow: 3px 3px 6px #00000044;
   box-sizing: border-box;
+  transition: 0.3s;
+  color: var(--font-color);
 }
-
+#cal.swich {
+  --font-color : #aaa;
+  
+  --theam1-main: #333;
+  --theam1-main-shadow: inset 3px 3px 6px #ffffff;
+  --theam1-point1 : #999;
+  --theam1-point1-1 : #fff;
+  --theam1-point2 : #666;
+  --theam1-point2-1 : #444;
+}
 
 .cal__setting {
   display: flex;
@@ -20,17 +31,25 @@ body {
 }
 
 .bring__btn {
-  background: url(../img/clock.svg) no-repeat center/cover;
+  background: url(../img/clock-hover.svg) no-repeat center/cover;
   height: 38px;
   width: 38px;
+}
+.swich .bring__btn {
+  background: url(../img/clock.svg) no-repeat center/cover;
 }
 
 .mood__track {
   height: 30px;
   width: 70px;
   border-radius: 30px;
-  box-shadow: inset 3px 3px 6px #00000044;
+  box-shadow: var(--theam1-main-shadow);
   background: #00000022;
+  position: relative;
+  transition: 0.3s;
+}
+.swich .mood__track {
+  background: #fff;
 }
 
 .mood__bar {
@@ -38,7 +57,15 @@ body {
   width: 30px;
   border-radius: 30px;
   box-shadow: 3px 3px 6px #00000044;
+  position: absolute;
+  transition: 0.3s;
+  right: calc(100% - 30px);
 }
+.swich .mood__bar {
+  right: 0;
+}
+
+
 .mood__bar-inner {
   height: 30px;
   width: 30px;
@@ -47,13 +74,12 @@ body {
   background: var(--theam1-main);
 }
 
-
 .cal__screen {
   margin-top: 10px;
   width: 100%;
   height: 150px;
   border-radius: 20px;
-  box-shadow: inset 3px 3px 10px #00000044;
+  box-shadow: var(--theam1-main-shadow);
   padding: 30px 20px;
   position: relative;
 }
@@ -61,11 +87,11 @@ body {
 #screen__formula {
   text-align: end;
   font-size: 3rem;
-  color: #707070;
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  position: relative;
 }
 
 
@@ -76,17 +102,22 @@ body {
   position: absolute;
   bottom: 30px;
   right: 20px;
+  color: var(--theam1-point1-1);
 }
+
+
+
 
 
 .cal__input {
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   grid-gap: 15px 10px;
-  grid-template-areas: 'ac c percent times' 'n7 n8 n9 divide' 'n4 n5 n6 plus' 'n1 n2 n3 minus' 'n0 dot bracketleft bracketright' 'submit submit submit submit'
+  grid-template-areas: 'ac c percent times' 'n7 n8 n9 divide' 'n4 n5 n6 plus' 'n1 n2 n3 minus' 'n0 dot submit submit'
 }
+
 
 .btn-frame {
   border-radius: 35px;
@@ -105,32 +136,11 @@ body {
   align-items: center;
   font-size: 3rem;
   height: 60px;
-  color: #707070;
   background: var(--theam1-main); 
   box-sizing: border-box;
 }
 .btn-frame:last-child {
   grid-area: submit;
-}
-
-.s_colorfont {
-  color: var(--theam1-point1);
-}
-.s_colorbg {
- color: #fff;
-  background: var(--theam1-point1);
-}
-.s_colorbg.input__btn {
-  box-shadow: -6px -6px 6px #ffffff66;
-  background: var(--theam1-point1-1);
-  
-}
-
-.btn-frame:nth-child(n+19):nth-child(-n+20) {
-  background: var(--theam1-point2-1);
-}
-#bracet-left, #bracet-right {
-  background: var(--theam1-point2);
 }
 
 .btn-frame:active, .btn-frame:active .input__btn {
@@ -145,6 +155,29 @@ body {
 button {
  width: 100%;
 }
+
+.operator {
+  background: var(--theam1-point2-1);
+}
+.operator .input__btn {
+  background: var(--theam1-point2);
+  color: var(--theam1-point1-1);
+}
+.performer {
+  background: var(--theam1-point1-1);
+}
+
+.performer .input__btn{
+  background: var(--theam1-point1);
+  color: var(--theam1-main);
+}
+
+
+
+
+
+
+
 
 #list {
   width: 300px;

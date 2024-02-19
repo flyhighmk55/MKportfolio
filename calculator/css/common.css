@@ -202,11 +202,13 @@
     /*폰트 스타일-------------------------*/
     --root-font-size: 62.5%;
     --font-family-main: 'Roboto', sans-serif;
+    --font-color : #707070;
 
     /*-------------------------*/
     --theam1-main : #f6f6f6;
-    --theam1-point1 : #4200FF;
-    --theam1-point1-1 : #5D24FF;
+    --theam1-main-shadow: inset 3px 3px 10px #00000044;
+    --theam1-point1 : #5D24FF;
+    --theam1-point1-1 : #4200FF;
     --theam1-point2 : #E2E4FD;
     --theam1-point2-1 : #D1D4F8;
   }
@@ -231,7 +233,7 @@
   }
 
   body {
-    color: var(--color-b);
+    color: var(--font-color);
     font-family: var(--font-family-main);
     font-size: 1.6rem;
     box-sizing: border-box;
