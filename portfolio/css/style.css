@@ -1145,6 +1145,9 @@ body {
 .p-yt .project__item-img {
   background-image: url(../img/cont/project_yt.svg);
 }
+.p-dj .project__item-img {
+  background-image: url(../img/cont/project_dj.svg);
+}
 
 
 .project__item-des {
