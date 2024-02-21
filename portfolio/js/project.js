@@ -15,7 +15,6 @@ $('#project-main').css({ 'min-height': 'calc(100vh - ' + hf_h + 'px)' });
 
 
 
-
 //[style] .project__item, .project-popup__cont 역순(최신순)으로 배열
 var project_prev = $('.project__item').prevAll();
 $('.project-main__cont').append(project_prev);
@@ -96,7 +95,34 @@ for (var i = 0; i <= popup_l; i++) {
 
 
 
+//프로젝트의 각 필터를 누르면 해당 카테고리만 활성화하라
+$('.project__cate-item').click(function(){
+  //필터의 메뉴를 클릭하면 필터명의 배경색을 진하게 변경하고
+  $('.project__cate-item span').removeClass('filter-color');
+  $(this).find('span').addClass('filter-color');
+  
+  //클릭한 필터명을 가져와서
+  var filter_name = $(this).find('.filter-color').text();
+  
+  //프로젝트 아이템을 모두 사라지게 하고
+  $('.project__item').removeClass('item-on').addClass('item-off');
+  
+  //클릭한 필터명에 해당하는 프로젝트 아이템을 보이게하고, 해당하지 않는 프로젝트 아이템을 안보이게 하라
+  if(filter_name.includes('퍼블리싱')){
+    $('.project__item.filter-publishing').removeClass('item-off').addClass('item-on');
+    
+  } else if(filter_name.includes('웹디자인')){
+    $('.project__item.filter-web').removeClass('item-off').addClass('item-on');
+    
+  } else if(filter_name.includes('기타디자인')){
+    $('.project__item.filter-design').removeClass('item-off').addClass('item-on');
+    
+  } else {
+    console.log(11);
+    $('.project__item').removeClass('item-off').addClass('item-on');
+  };
 
+});
 
 
 
