@@ -110,13 +110,13 @@ $('.project__cate-item').click(function(){
   //클릭한 필터명에 해당하는 프로젝트 아이템을 보이게하고, 해당하지 않는 프로젝트 아이템을 안보이게 하라
   if(filter_name.includes('퍼블리싱')){
     $('.project__item.filter-publishing').removeClass('item-off').addClass('item-on');
-    
+        console.log(22);
   } else if(filter_name.includes('웹디자인')){
     $('.project__item.filter-web').removeClass('item-off').addClass('item-on');
-    
+        console.log(33);
   } else if(filter_name.includes('기타디자인')){
-    $('.project__item.filter-design').removeClass('item-off').addClass('item-on');
-    
+    $('.project__item.filter-etc').removeClass('item-off').addClass('item-on');
+        console.log(44);
   } else {
     console.log(11);
     $('.project__item').removeClass('item-off').addClass('item-on');
