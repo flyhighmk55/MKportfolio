@@ -1505,12 +1505,6 @@ body {
 }
 
 
-.p-yd .popup__func-item:nth-of-type(3) {
-  display: none !important;
-}
-
-
-
 .popup__func {
   position: relative;
 }
@@ -1604,6 +1598,17 @@ body {
   grid-column-gap: 2em;
   grid-template-areas: "att1 att2" "att3 att3";
 }
+
+
+
+/*팝업-펑션 말풍선 관리///////////////////////*/
+.p-yd .popup__func-item:nth-of-type(3) {
+  display: none !important;
+}
+
+
+
+
 
 .popup-att__item:nth-child(1) {
   grid-area: att1;
