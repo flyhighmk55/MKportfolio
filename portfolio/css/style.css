@@ -1601,8 +1601,8 @@ body {
 
 
 
-/*팝업-펑션 말풍선 관리///////////////////////*/
-.p-yd .popup__func-item:nth-of-type(3) {
+/*팝업-펑션 말풍선 수량 관리///////////////////////*/
+.p-yd .popup__func-item:nth-of-type(3), .p-dj .popup__func-item:nth-of-type(3) {
   display: none !important;
 }
 
