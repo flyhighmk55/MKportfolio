@@ -221,21 +221,29 @@ body {
 }
 .letter {
   background: #F8FAFF;
-  padding: 40px 60px 200px;
+  padding: 20px 30px 200px;
 }
 .letter_frame {
-  padding: 60px 40px;
+  padding: 30px 20px;
   background: #fff;
   box-shadow: 4px 4px 4px #ccc;
 }
 .letter_contant {
-  line-height: 2.2em;
-  font-size: 2.6rem;
+  line-height: 34px;
+  font-size: 16px;
   word-break: keep-all;
 }
 .letter_contant span {
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 20px;
+}
+
+.letter_contant .gray {
+  color: #aaa;
+}
+.letter_contant .end {
+  display: block;
+  text-align:right;
 }
 
 
