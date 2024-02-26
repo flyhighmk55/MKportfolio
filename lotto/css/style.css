@@ -222,6 +222,7 @@ body {
 .letter {
   background: #F8FAFF;
   padding: 20px 30px 100px;
+  margin: 0 auto;
 }
 .letter_frame {
   padding: 30px 20px;
@@ -245,8 +246,21 @@ body {
   display: block;
   text-align:right;
 }
+.download {
+  background: #fff;
+  font-size: 16px;
+  margin-top: 60px;
+  color: #999;
+  box-shadow: inset -4px -4px 4px #ddd;
+  width: 120px;
+  border-radius: 100px;
+  padding: 1em 2em;
+  position: absolute;
+  left: calc(50% - 60px);
+  
+}
 .letter_worning {
-  margin-top: 30px;
+  margin-top: 20px;
   text-align: center;
   font-size: 1.2rem;
   color: #bbb;
