@@ -246,17 +246,18 @@ body {
   display: block;
   text-align:right;
 }
+.download {
+  margin-top: 40px;
+  text-align: center;
+}
 .download a {
-  background: #fff;
+  background: #1A94E1;
   font-size: 16px;
-  margin-top: 60px;
-  color: #999;
-  box-shadow: inset -4px -4px 4px #ccc;
-  width: 120px;
+  color: #fff;
+  box-shadow: inset -4px -4px 4px rgba(0,0,0,0.3);
   border-radius: 100px;
-  padding: 1em 2em;
-  position: absolute;
-  left: calc(50% - 60px);
+  padding: 1em 1.5em;
+  margin: 0 0.2em;
 }
 .letter_worning {
   margin-top: 20px;
