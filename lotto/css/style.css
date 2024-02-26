@@ -221,7 +221,7 @@ body {
 }
 .letter {
   background: #F8FAFF;
-  padding: 20px 30px 80px;
+  padding: 20px 30px 60px;
   margin: 0 auto;
 }
 .letter_frame {
@@ -230,13 +230,13 @@ body {
   box-shadow: 4px 4px 4px #ccc;
 }
 .letter_contant {
-  line-height: 2em;
-  font-size: 1.2rem;
+  line-height: 1.8em;
+  font-size: 0.9rem;
   word-break: keep-all;
 }
 .letter_contant span {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 
 .letter_contant .gray {
@@ -252,7 +252,7 @@ body {
 }
 .download a {
   background: rgba(26, 148, 225, 0.8);
-  font-size: 16px;
+  font-size: 12px;
   color: #fff;
   box-shadow: inset -4px -4px 4px rgba(0,0,0,0.3);
   border-radius: 100px;
@@ -262,13 +262,13 @@ body {
 .letter_worning {
   padding: 30px;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.5em;
   color: #fff;
   background: #007AC3;
 }
 .letter_worning .copy {
   color: rgba(255,255,255,0.5);
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
