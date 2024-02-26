@@ -221,7 +221,7 @@ body {
 }
 .letter {
   background: #F8FAFF;
-  padding: 20px 30px 150px;
+  padding: 20px 30px 80px;
   margin: 0 auto;
 }
 .letter_frame {
@@ -251,7 +251,7 @@ body {
   text-align: center;
 }
 .download a {
-  background: #1A94E1;
+  background: rgba(26, 148, 225, 0.8);
   font-size: 16px;
   color: #fff;
   box-shadow: inset -4px -4px 4px rgba(0,0,0,0.3);
@@ -260,10 +260,15 @@ body {
   margin: 0 0.2em;
 }
 .letter_worning {
-  margin-top: 20px;
+  padding: 30px;
   text-align: center;
   font-size: 1.2rem;
-  color: #bbb;
+  line-height: 1.5em;
+  color: #fff;
+  background: #007AC3;
 }
-
+.letter_worning .copy {
+  color: rgba(255,255,255,0.5);
+  font-size: 1rem;
+}
 
