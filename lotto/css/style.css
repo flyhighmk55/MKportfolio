@@ -221,7 +221,7 @@ body {
 }
 .letter {
   background: #F8FAFF;
-  padding: 20px 30px 200px;
+  padding: 20px 30px 100px;
 }
 .letter_frame {
   padding: 30px 20px;
@@ -230,7 +230,7 @@ body {
 }
 .letter_contant {
   line-height: 2em;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   word-break: keep-all;
 }
 .letter_contant span {
@@ -245,6 +245,11 @@ body {
   display: block;
   text-align:right;
 }
-
+.letter_worning {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #bbb;
+}
 
 
