@@ -24,130 +24,143 @@
 <body>
  <!-- header -->
   <header class="header">
-    <div class="header_wrap">
-      <div class="header_top">
-        <ul class="laguage">
-          <li class="am"><a href="#"></a></li>
-          <li class="jp"><a href="#"></a></li>
-          <li class="ch"><a href="#"></a></li>
-          <li class="ko"><a href="#"></a></li>
+    <div class="header__top wrap">
+        <ul class="header__top__language">
+          <li class="am"><a href="#">
+            <span class="blind">영어</span>
+          </a></li>
+          <li class="jp"><a href="#">
+            <span class="blind">일본어</span>
+          </a></li>
+          <li class="ch"><a href="#">
+            <span class="blind">중국어</span>
+          </a></li>
+          <li class="ko"><a href="index.html">
+            <span class="blind">한국어</span>
+          </a></li>
         </ul>
-        <div class="go">
+        <div class="header__top__go">
           <div class="join"><a href="#">회원가입</a></div>
           <div class="cs"><a href="#">고객센터</a></div>
         </div>
       </div>
-      <div class="header_left">
-        <h1 class="header_logo">
+    <div class="header__bottom wrap">
+      <div class="header__left">
+        <h1 class="header__left_logo">
           <a href="index.html">
             <img src="img/deco/ir_logo_blue.png" alt="하이성형외과" class="header_logo_img">
           </a>
         </h1>
       </div>
-      <div class="header_center">
-          <div class="gnb">
-            <div class="gnb_all">카테고리</div>
-            <ul class="gnb_cate">
-              <li>
-                <div class="main_cate">하이성형외과</div>
-                <ul class="sub_cate">
-                  <li><a href="#">하이성형외과철학</a></li>
-                  <li><a href="#">의료진소개</a></li>
-                  <li><a href="#">시설안내</a></li>
-                  <li><a href="#">언론보도</a></li>
-                  <li><a href="#">공지사항</a></li>
-                </ul>
-              </li>
-              <li>
-                <div class="main_cate">눈성형</div>
-                <ul class="sub_cate">
-                  <li><a href="#">하이 눈성형 디테일</a></li>
-                  <li><a href="#">쌍커플수술</a></li>
-                  <li><a href="#">눈매교정</a></li>
-                  <li><a href="#">트임성형</a></li>
-                  <li><a href="#">눈밑지방재배치</a></li>
-                  <li><a href="#">눈재수술</a></li>
-                </ul>
-              </li>
-              <li>
-                <div class="main_cate">코성형</div>
-                <ul class="sub_cate">
-                  <li><a href="#">하이 코성형 디테일</a></li>
-                  <li><a href="#">낮은코성형</a></li>
-                  <li><a href="#">매부리코성형</a></li>
-                  <li><a href="#">기능성코성형</a></li>
-                  <li><a href="#">복코성형</a></li>
-                  <li><a href="#">휜코성형</a></li>
-                  <li><a href="#">코재수술</a></li>
-                </ul>
-              </li>
-              <li>
-                <div class="main_cate">윤곽성형</div>
-                <ul class="sub_cate">
-                  <li><a href="#">하이 윤곽성형 디테일</a></li>
-                  <li><a href="#">사각턱수술</a></li>
-                  <li><a href="#">광대축소</a></li>
-                  <li><a href="#">앞턱수술</a></li>
-                  <li><a href="#">양악수술</a></li>
-                  <li><a href="#">돌출입수술</a></li>
-                  <li><a href="#">윤곽재수술</a></li>
-                </ul>
-              </li>
-              <li>
-                <div class="main_cate">가슴성형</div>
-                <ul class="sub_cate">
-                  <li><a href="#">하이 가슴성형 디테일</a></li>
-                  <li><a href="#">가슴확대수술</a></li>
-                  <li><a href="#">가슴축소수술</a></li>
-                  <li><a href="#">쳐진가슴수술</a></li>
-                  <li><a href="#">부유방수술</a></li>
-                  <li><a href="#">가슴재수술</a></li>
-                </ul>
-              </li>
-              <li>
-                <div class="main_cate">커뮤니티</div>
-                <ul class="sub_cate">
-                  <li><a href="#">베스트하이픽</a></li>
-                  <li><a href="#">하이룩북</a></li>
-                  <li><a href="#">이벤트</a></li>
-                  <li><a href="#">리얼리뷰</a></li>
-                  <li><a href="#">리얼셀피</a></li>
-                  <li><a href="#">온라인상담</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+      <div class="header__center">
+        <div class="header__center__gnb_all"><a href="#">
+          <img src="img/deco/ir_gnbcategory.png" alt="카테고리">
+          <span>전체</span>
+        </a></div>
+        <div class="header__center__gnb_cate">
+          <ul class="gnb__main_cate">
+            <li class="gnb__main_cate_item"><a href="#">하이성형외과</a></li>
+            <li class="gnb__main_cate_item"><a href="#">눈성형</a></li>
+            <li class="gnb__main_cate_item"><a href="#">코성형</a></li>
+            <li class="gnb__main_cate_item"><a href="#">윤곽성형</a></li>
+            <li class="gnb__main_cate_item"><a href="#">가슴성형</a></li>
+            <li class="gnb__main_cate_item"><a href="#">커뮤니티</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="header_right">
-        <ul class="quick">
-          <li class="quick_item"><a href="#">
+      <ul class="header__right">
+          <li class="header__right_quick"><a href="#">
             <img src="img/deco/ir_event.png" alt="프로모션">
             <p>프로모션</p>
           </a></li>
-          <li class="quick_item"><a href="#">
+          <li class="header__right_quick"><a href="#">
             <img src="img/deco/ir_login.png" alt="로그인">
             <p>로그인</p>
           </a></li>
-          <li class="quick_item"><a href="#">
+          <li class="header__right_quick"><a href="#">
             <img src="img/deco/ir_reservation.png" alt="상담예약">
             <p>상담예약</p>
           </a></li>
-        </ul>
-      </div>
+      </ul>
     </div>
+<!-- 다시 생각해봐야 하는 부분 --------------------------------->
+    <ul class="gnb__sub_cate">
+      <li>
+        <ul class="gnb__sub_cate_item">
+          <li><a href="#">하이성형외과철학</a></li>
+          <li><a href="#">의료진소개</a></li>
+          <li><a href="#">시설안내</a></li>
+          <li><a href="#">언론보도</a></li>
+          <li><a href="#">공지사항</a></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gnb__sub_cate_item">
+          <li><a href="#">하이 눈성형 디테일</a></li>
+          <li><a href="#">쌍커플수술</a></li>
+          <li><a href="#">눈매교정</a></li>
+          <li><a href="#">트임성형</a></li>
+          <li><a href="#">눈밑지방재배치</a></li>
+          <li><a href="#">눈재수술</a></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gnb__sub_cate_item">
+          <li><a href="#">하이 코성형 디테일</a></li>
+          <li><a href="#">낮은코성형</a></li>
+          <li><a href="#">매부리코성형</a></li>
+          <li><a href="#">기능성코성형</a></li>
+          <li><a href="#">복코성형</a></li>
+          <li><a href="#">휜코성형</a></li>
+          <li><a href="#">코재수술</a></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gnb__sub_cate_item">
+          <li><a href="#">하이 윤곽성형 디테일</a></li>
+          <li><a href="#">사각턱수술</a></li>
+          <li><a href="#">광대축소</a></li>
+          <li><a href="#">앞턱수술</a></li>
+          <li><a href="#">양악수술</a></li>
+          <li><a href="#">돌출입수술</a></li>
+          <li><a href="#">윤곽재수술</a></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gnb__sub_cate_item">
+          <li><a href="#">하이 가슴성형 디테일</a></li>
+          <li><a href="#">가슴확대수술</a></li>
+          <li><a href="#">가슴축소수술</a></li>
+          <li><a href="#">쳐진가슴수술</a></li>
+          <li><a href="#">부유방수술</a></li>
+          <li><a href="#">가슴재수술</a></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gnb__sub_cate_item">
+          <li><a href="#">베스트하이픽</a></li>
+          <li><a href="#">하이룩북</a></li>
+          <li><a href="#">이벤트</a></li>
+          <li><a href="#">리얼리뷰</a></li>
+          <li><a href="#">리얼셀피</a></li>
+          <li><a href="#">온라인상담</a></li>
+        </ul>
+      </li>
+    </ul>
+<!-- -------------------------------------------------- -->
   </header>
   <!-- contants -->
   <section class="section">
     <h2 class="blind">contants area</h2>
     <div></div>
-    <div class="index_intro"></div>
-    <div class="index_best"></div>
-    <div class="index_lookbook"></div>
-    <div class="index_event"></div>
-    <div class="index_bg"></div>
-    <div class="index_review"></div>
-    <div class="index_selfies"></div>
-    <div class="index_contact"></div>
+    <div class="index__intro"></div>
+    <div class="index__best"></div>
+    <div class="index__lookbook"></div>
+    <div class="index__event"></div>
+    <div class="index__bg"></div>
+    <div class="index__review"></div>
+    <div class="index__selfies"></div>
+    <div class="index__contact"></div>
   </section>
   <!-- footer -->
   <footer class="footer">
